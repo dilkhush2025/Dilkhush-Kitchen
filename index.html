@@ -14,36 +14,37 @@
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background: url('https://images.unsplash.com/photo-1604908177450-40f6b93375c7?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1605475033492-692d0b4646e5?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
       background-size: cover;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
       text-align: center;
-      backdrop-filter: brightness(0.6);
+      color: white;
     }
 
     .overlay {
       background: rgba(0, 0, 0, 0.6);
-      padding: 3rem 2rem;
+      padding: 2rem;
       border-radius: 12px;
+      max-width: 90%;
+      width: 500px;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
-      max-width: 600px;
     }
 
     h1 {
       font-family: 'Merriweather', serif;
-      font-size: 3rem;
+      font-size: 2.5rem;
       color: #ffcc00;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     h2 {
-      font-size: 1.5rem;
-      font-weight: normal;
-      margin-bottom: 1.5rem;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      color: #f3f3f3;
     }
 
     p {
@@ -55,8 +56,13 @@
       h1 {
         font-size: 2rem;
       }
+
       h2 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
+      }
+
+      .overlay {
+        padding: 1.5rem;
       }
     }
   </style>
@@ -65,7 +71,7 @@
   <div class="overlay">
     <h1>Dilkhush Kitchen</h1>
     <h2>Authentic Indian Cuisine</h2>
-    <p>We're cooking up something special! Our website is coming soon.</p>
+    <p>We’re cooking something special. Our website is coming soon!</p>
   </div>
 </body>
 </html>
