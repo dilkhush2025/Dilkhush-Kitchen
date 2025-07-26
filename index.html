@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dilkhush Kitchen | Authentic Indian Cuisine</title>
+  <title>Dilkhush Kitchen | Coming Soon</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     * {
@@ -14,38 +14,21 @@
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background: radial-gradient(circle at center, #2b1b17, #1a0e0a);
+      background: radial-gradient(circle at top, #1a0e0a, #2b1b17);
       min-height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      text-align: center;
+      justify-content: flex-start;
       color: white;
+      padding: 2rem 1rem;
       overflow-x: hidden;
     }
 
-    .overlay {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 2rem;
-      max-width: 960px;
-      width: 95%;
-      box-shadow: 0 0 30px rgba(255, 153, 0, 0.3);
-      animation: fadeIn 2s ease-in-out forwards;
-      opacity: 0;
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
     .logo {
-      max-width: 150px;
+      max-width: 120px;
       margin-bottom: 1rem;
-      animation: float 3s ease-in-out infinite;
+      animation: float 4s ease-in-out infinite;
     }
 
     @keyframes float {
@@ -58,84 +41,82 @@
       font-size: 3rem;
       color: #ffcc00;
       margin-bottom: 0.5rem;
+      text-align: center;
     }
 
     h2 {
-      font-size: 1.4rem;
-      font-weight: 300;
-      color: #f3e5ab;
-      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      font-weight: 400;
+      margin-bottom: 2rem;
+      color: #eee;
     }
 
     .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-      margin-top: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      max-width: 1000px;
     }
 
     .gallery-item {
-      width: 200px;
-      height: 140px;
-      background-size: cover;
-      background-position: center;
-      border-radius: 12px;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.15);
+      transition: transform 0.3s ease;
       cursor: pointer;
     }
 
-    .gallery-item:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
-    }
-
-    .caption {
-      position: absolute;
-      bottom: 0;
+    .gallery-item img {
       width: 100%;
-      padding: 0.5rem;
-      background: rgba(0, 0, 0, 0.5);
-      font-size: 0.9rem;
-      color: #fff;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+      display: block;
     }
 
-    p {
-      margin-top: 1rem;
-      font-size: 1rem;
-      color: #ddd;
+    .gallery-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 30px rgba(255, 204, 0, 0.25);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
     }
 
     @media (max-width: 600px) {
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1.2rem; }
-      .gallery-item { width: 100%; height: 160px; }
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.1rem;
+      }
+
+      .logo {
+        max-width: 90px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="overlay">
-    <img src="logo.png" alt="Dilkhush Kitchen Logo" class="logo" />
-    <h1>Dilkhush Kitchen</h1>
-    <h2>Bringing the Flavours of India to Your Table</h2>
-    <p>We’re preparing something truly delicious. Here’s a taste of what’s coming soon:</p>
+  <img src="logo.png" alt="Dilkhush Kitchen Logo" class="logo" />
+  <h1>Dilkhush Kitchen</h1>
+  <h2>Coming Soon</h2>
 
-    <div class="gallery">
-      <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg');">
-        <div class="caption">Tandoori Spices</div>
-      </div>
-      <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg');">
-        <div class="caption">Royal Thali</div>
-      </div>
-      <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg');">
-        <div class="caption">Traditional Cooking</div>
-      </div>
-      <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg');">
-        <div class="caption">Warm Ambience</div>
-      </div>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="https://images.pexels.com/photos/4611985/pexels-photo-4611985.jpeg" alt="Indian Food" />
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="Indian Food" />
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg" alt="Indian Food" />
+    </div>
+    <div class="gallery-item">
+      <img src="https://images.pexels.com/photos/6287761/pexels-photo-6287761.jpeg" alt="Indian Food" />
     </div>
   </div>
 </body>
