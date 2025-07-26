@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dilkhush Kitchen | Coming Soon</title>
+  <title>Dilkhush Kitchen | Authentic Indian Cuisine</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     * {
@@ -14,33 +14,24 @@
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(-45deg, #1f1c2c, #928dab, #1f1c2c, #928dab);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
+      background: radial-gradient(circle at center, #2b1b17, #1a0e0a);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
       color: white;
-      overflow: hidden;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      overflow-x: hidden;
     }
 
     .overlay {
+      background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.1);
-      padding: 2rem;
       border-radius: 20px;
-      max-width: 90%;
-      width: 500px;
-      text-align: center;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
-      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 2rem;
+      max-width: 960px;
+      width: 95%;
+      box-shadow: 0 0 30px rgba(255, 153, 0, 0.3);
       animation: fadeIn 2s ease-in-out forwards;
       opacity: 0;
     }
@@ -52,70 +43,100 @@
     }
 
     .logo {
-      max-width: 100%;
-      height: auto;
+      max-width: 150px;
       margin-bottom: 1rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3rem;
+      color: #ffcc00;
+      margin-bottom: 0.5rem;
     }
 
     h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.5rem;
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: #f3e5ab;
       margin-bottom: 1rem;
-      color: #ffc107;
-      animation: pulseText 3s infinite;
     }
 
-    @keyframes pulseText {
-      0%, 100% { text-shadow: 0 0 5px #fff; }
-      50% { text-shadow: 0 0 15px #ffc107; }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .gallery-item {
+      width: 200px;
+      height: 140px;
+      background-size: cover;
+      background-position: center;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(255, 204, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.5);
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 0.5rem;
+      background: rgba(0, 0, 0, 0.5);
+      font-size: 0.9rem;
+      color: #fff;
     }
 
     p {
+      margin-top: 1rem;
       font-size: 1rem;
-      color: #e0e0e0;
-      margin-bottom: 1.5rem;
-    }
-
-    .notify-btn {
-      background: #ffcc00;
-      border: none;
-      padding: 0.7rem 1.5rem;
-      font-size: 1rem;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      color: #333;
-      font-weight: bold;
-      box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
-    }
-
-    .notify-btn:hover {
-      background: #ffe066;
-      box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
-      transform: scale(1.05);
+      color: #ddd;
     }
 
     @media (max-width: 600px) {
-      .logo {
-        max-width: 80%;
-      }
-
-      h2 {
-        font-size: 2rem;
-      }
-
-      .overlay {
-        padding: 1.5rem;
-      }
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1.2rem; }
+      .gallery-item { width: 100%; height: 160px; }
     }
   </style>
 </head>
 <body>
   <div class="overlay">
     <img src="logo.png" alt="Dilkhush Kitchen Logo" class="logo" />
-    <h2>Authentic Indian Cuisine</h2>
-    <p>We’re cooking something special. Stay tuned for our grand opening!</p>
-    <button class="notify-btn" onclick="alert('Thank you! We’ll notify you when we launch.')">Notify Me</button>
+    <h1>Dilkhush Kitchen</h1>
+    <h2>Bringing the Flavours of India to Your Table</h2>
+    <p>We’re preparing something truly delicious. Here’s a taste of what’s coming soon:</p>
+
+    <div class="gallery">
+      <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg');">
+        <div class="caption">Tandoori Spices</div>
+      </div>
+      <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg');">
+        <div class="caption">Royal Thali</div>
+      </div>
+      <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg');">
+        <div class="caption">Traditional Cooking</div>
+      </div>
+      <div class="gallery-item" style="background-image: url('https://images.pexels.com/photos/1109197/pexels-photo-1109197.jpeg');">
+        <div class="caption">Warm Ambience</div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
