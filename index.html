@@ -14,23 +14,41 @@
 
     body {
       font-family: 'Open Sans', sans-serif;
-      background: url('bg1.jpg') no-repeat center center fixed;
-      background-size: cover;
+      background: linear-gradient(-45deg, #1f1c2c, #928dab, #1f1c2c, #928dab);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
       color: white;
+      overflow: hidden;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .overlay {
-      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.1);
       padding: 2rem;
-      border-radius: 12px;
+      border-radius: 20px;
       max-width: 90%;
       width: 500px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      animation: fadeIn 2s ease-in-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
     }
 
     .logo {
@@ -41,14 +59,40 @@
 
     h2 {
       font-family: 'Great Vibes', cursive;
-      font-size: 2rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
-      color: #ffcc99;
+      color: #ffc107;
+      animation: pulseText 3s infinite;
+    }
+
+    @keyframes pulseText {
+      0%, 100% { text-shadow: 0 0 5px #fff; }
+      50% { text-shadow: 0 0 15px #ffc107; }
     }
 
     p {
       font-size: 1rem;
       color: #e0e0e0;
+      margin-bottom: 1.5rem;
+    }
+
+    .notify-btn {
+      background: #ffcc00;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: #333;
+      font-weight: bold;
+      box-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
+    }
+
+    .notify-btn:hover {
+      background: #ffe066;
+      box-shadow: 0 0 20px rgba(255, 204, 0, 0.8);
+      transform: scale(1.05);
     }
 
     @media (max-width: 600px) {
@@ -57,7 +101,7 @@
       }
 
       h2 {
-        font-size: 1.5rem;
+        font-size: 2rem;
       }
 
       .overlay {
@@ -70,7 +114,8 @@
   <div class="overlay">
     <img src="logo.png" alt="Dilkhush Kitchen Logo" class="logo" />
     <h2>Authentic Indian Cuisine</h2>
-    <p>We're cooking something special. Our website is coming soon!</p>
+    <p>We’re cooking something special. Stay tuned for our grand opening!</p>
+    <button class="notify-btn" onclick="alert('Thank you! We’ll notify you when we launch.')">Notify Me</button>
   </div>
 </body>
 </html>
