@@ -7,27 +7,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
+      height: 100vh;
       font-family: 'Open Sans', sans-serif;
-      background: radial-gradient(circle at top, #1a0e0a, #2b1b17);
-      min-height: 100vh;
+      background: url('https://images.pexels.com/photos/6287761/pexels-photo-6287761.jpeg') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
+      justify-content: center;
       color: white;
-      padding: 2rem 1rem;
-      overflow-x: hidden;
+      overflow: hidden;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.65);
+      border-radius: 16px;
+      padding: 3rem;
+      text-align: center;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 30px rgba(255, 204, 0, 0.4);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .overlay:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 50px rgba(255, 204, 0, 0.6);
     }
 
     .logo {
       max-width: 120px;
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
       animation: float 4s ease-in-out infinite;
     }
 
@@ -38,56 +52,24 @@
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3rem;
+      font-size: 3.5rem;
       color: #ffcc00;
       margin-bottom: 0.5rem;
-      text-align: center;
     }
 
     h2 {
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 2rem;
-      color: #eee;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      width: 100%;
-      max-width: 1000px;
-    }
-
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255, 204, 0, 0.15);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.4s ease;
-      display: block;
-    }
-
-    .gallery-item:hover {
-      transform: scale(1.03);
-      box-shadow: 0 0 30px rgba(255, 204, 0, 0.25);
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.1);
+      font-size: 1.4rem;
+      color: #f3f3f3;
+      font-weight: 300;
     }
 
     @media (max-width: 600px) {
+      .overlay {
+        padding: 2rem;
+      }
+
       h1 {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
       }
 
       h2 {
@@ -95,29 +77,16 @@
       }
 
       .logo {
-        max-width: 90px;
+        max-width: 80px;
       }
     }
   </style>
 </head>
 <body>
-  <img src="logo.png" alt="Dilkhush Kitchen Logo" class="logo" />
-  <h1>Dilkhush Kitchen</h1>
-  <h2>Coming Soon</h2>
-
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="https://images.pexels.com/photos/4611985/pexels-photo-4611985.jpeg" alt="Indian Food" />
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg" alt="Indian Food" />
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.pexels.com/photos/2233729/pexels-photo-2233729.jpeg" alt="Indian Food" />
-    </div>
-    <div class="gallery-item">
-      <img src="https://images.pexels.com/photos/6287761/pexels-photo-6287761.jpeg" alt="Indian Food" />
-    </div>
+  <div class="overlay">
+    <img src="logo.png" alt="Dilkhush Kitchen Logo" class="logo" />
+    <h1>Dilkhush Kitchen</h1>
+    <h2>Coming Soon</h2>
   </div>
 </body>
 </html>
