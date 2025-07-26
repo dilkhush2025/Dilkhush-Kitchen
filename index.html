@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Dilkhush Kitchen | Coming Soon</title>
-
+  
   <!-- Elegant fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
+  
   <style>
     :root {
       --primary-color: #ffd166;
@@ -23,41 +23,25 @@
     html, body {
       height: 100%;
       font-family: 'Open Sans', sans-serif;
-      background: #000;
-      overflow: hidden;
-    }
-
-    /* Parallax and animation container */
-    .background-container {
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('bg1.jpg') center center / cover no-repeat fixed;
-      z-index: -1;
-      animation: floatBackground 40s linear infinite alternate;
-      filter: brightness(0.85);
-    }
-
-    @keyframes floatBackground {
-      0% { transform: scale(1.05) translate(0, 0); }
-      50% { transform: scale(1.07) translate(-10px, -10px); }
-      100% { transform: scale(1.05) translate(0, 0); }
+      background: url('bg1.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
     }
 
     .overlay {
       background: var(--overlay-blur);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       border-radius: 20px;
       padding: 3rem;
       max-width: 550px;
       width: 90%;
       text-align: center;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
       animation: fadeInUp 1s ease-out both;
-      position: relative;
-      z-index: 1;
     }
 
     @keyframes fadeInUp {
@@ -72,41 +56,22 @@
     }
 
     .logo {
-      max-width: 140px;
+      max-width: 130px;
       height: auto;
-      margin-bottom: 1.8rem;
-      animation: logoPulse 3s ease-in-out infinite;
-    }
-
-    @keyframes logoPulse {
-      0%, 100% {
-        transform: scale(1);
-        filter: drop-shadow(0 0 5px #ffd166);
-      }
-      50% {
-        transform: scale(1.05);
-        filter: drop-shadow(0 0 12px #ffd166aa);
-      }
+      margin-bottom: 1.5rem;
     }
 
     h1 {
       font-family: 'Great Vibes', cursive;
-      font-size: 3.5rem;
+      font-size: 3rem;
       color: var(--primary-color);
-      margin-bottom: 0.8rem;
-      text-shadow: 0 0 8px rgba(255, 209, 102, 0.5);
+      margin-bottom: 0.5rem;
     }
 
     p {
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       line-height: 1.6;
       color: #f0f0f0;
-    }
-
-    strong {
-      color: var(--primary-color);
-      font-weight: 600;
-      text-shadow: 0 0 5px rgba(255, 209, 102, 0.3);
     }
 
     @media (max-width: 600px) {
@@ -119,18 +84,16 @@
       }
 
       h1 {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
       }
 
       p {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="background-container"></div>
-
   <div class="overlay">
     <img src="logo.png" alt="Dilkhush Kitchen Logo" class="logo" />
     <h1>Dilkhush Kitchen</h1>
