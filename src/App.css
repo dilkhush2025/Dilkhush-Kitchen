@@ -104,34 +104,52 @@ body {
 }
 
 /* ✅ Mobile-specific adjustments */
+/* Remove white bar issue on mobile */
+.navbar-collapse {
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Mobile nav links stacked */
 @media (max-width: 768px) {
-  .navbar-collapse {
-    background: rgba(10, 10, 10, 0.95);
-    padding: 6rem;
-    border-radius: 12px;
-    text-align: center;
-  }
-  .nav-link {
-    font-size: 1rem;
-    display: block;
-    margin: 10px 0;
-    color: #fff !important;
-  }
-  .order-btn {
-    margin-top: 15px;
-    width: 100%;
+  .navbar {
+    padding: 0.5rem 1rem;
   }
 
-  /* Hero section padding */
-  .hero {
-    text-align: center;
-    padding: 0 6rem;
-  }
-  .hero-content {
-    max-width: 90%;
+  .navbar-brand {
     margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    height: 65px;
+    margin-bottom: 0.5rem;
+  }
+
+  .brand-text {
+    font-size: 1.2rem;
+    color: #e6c07b;
+  }
+
+  .nav-link {
+    display: block;
+    margin: 1rem 0;
+    font-size: 1.1rem;
+    color: #fff !important;
+  }
+
+  .order-btn {
+    width: 100%;
+    margin-top: 1rem;
   }
 }
+
 
 /* Buttons */
 .order-btn, .hero-btn {
