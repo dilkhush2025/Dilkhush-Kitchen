@@ -104,7 +104,7 @@ body {
 @media (max-width: 768px) {
   .navbar-collapse {
     background: rgba(10, 10, 10, 0.95);
-    padding: 1rem;
+    padding: 6rem;
     border-radius: 12px;
     text-align: center;
   }
@@ -122,7 +122,7 @@ body {
   /* Hero section padding */
   .hero {
     text-align: center;
-    padding: 0 1rem;
+    padding: 0 6rem;
   }
   .hero-content {
     max-width: 90%;
