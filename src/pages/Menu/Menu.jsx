@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import breakfast from '../../utils/breakfast';
 import lunch from '../../utils/lunch';
 import dinner from '../../utils/dinner';
-import dessert from '../../utils/dessert';
 import drink from '../../utils/drink';
 import kidsSpecial from '../../utils/drinks'
 import sides from '../../utils/sides'
