@@ -19,11 +19,10 @@ body {
 }
 
 .navbar-logo {
-  height: clamp(60px, 8vw, 100px); /* mobile min → scale → desktop max */
+  height: clamp(45px, 10vw, 65px);
   object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
-
 .navbar-logo:hover {
   transform: scale(1.05);
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
@@ -32,7 +31,7 @@ body {
 /* Brand text next to logo */
 .brand-text {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-size: clamp(1rem, 3vw, 1.6rem);
   color: #e6c07b;
   letter-spacing: 1px;
   margin-left: 0.3rem;
@@ -68,98 +67,33 @@ body {
 }
 
 /* Hero Section */
-/* ✅ Base responsive typography */
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 4vw, 3rem); /* scales with screen */
+  font-size: clamp(1.5rem, 6vw, 2.2rem);
   font-weight: 600;
   color: #fff;
   margin-bottom: 10px;
 }
 .hero-subtitle {
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-size: clamp(0.9rem, 4vw, 1.1rem);
   color: #e6c07b;
 }
-
-/* ✅ Hero logo scales down on mobile */
 .hero-logo {
-  height: clamp(70px, 18vw, 120px);
+  height: clamp(50px, 25vw, 90px);
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.6));
 }
-
-/* ✅ Button adjustments for mobile */
-.order-btn, .hero-btn {
-  padding: 10px 20px;
-  font-size: clamp(0.85rem, 2.5vw, 1rem);
-  border-radius: 50px;
-  white-space: nowrap;
-}
-
-/* ✅ Navbar fixes */
-.navbar-logo {
-  height: clamp(45px, 10vw, 65px);
-}
-.brand-text {
-  font-size: clamp(1rem, 3vw, 1.6rem);
-}
-
-/* ✅ Mobile-specific adjustments */
-/* Remove white bar issue on mobile */
-.navbar-collapse {
-  background: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 1.5rem 1rem;
-  border-radius: 12px;
-  text-align: center;
-  transition: all 0.3s ease-in-out;
-}
-
-/* Mobile nav links stacked */
-@media (max-width: 768px) {
-  .navbar {
-    padding: 0.5rem 1rem;
-  }
-
-  .navbar-brand {
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar-logo {
-    height: 65px;
-    margin-bottom: 0.5rem;
-  }
-
-  .brand-text {
-    font-size: 1.2rem;
-    color: #e6c07b;
-  }
-
-  .nav-link {
-    display: block;
-    margin: 1rem 0;
-    font-size: 1.1rem;
-    color: #fff !important;
-  }
-
-  .order-btn {
-    width: 100%;
-    margin-top: 1rem;
-  }
-}
-
 
 /* Buttons */
 .order-btn, .hero-btn {
   background: linear-gradient(135deg, #116530, #0b3d20);
   border: none;
   color: #fff;
-  padding: 12px 28px;
+  padding: 10px 20px;
   border-radius: 50px;
   font-weight: 600;
+  font-size: clamp(0.85rem, 2.5vw, 1rem);
   letter-spacing: 0.8px;
+  white-space: nowrap;
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
   transition: background 0.4s ease, box-shadow 0.3s ease;
 }
@@ -168,7 +102,67 @@ body {
   box-shadow: 0 8px 22px rgba(0,0,0,0.45);
 }
 
-/* Smooth transition */
+/* Mobile-first Hero layout */
+.hero {
+  text-align: center;
+  padding: 1rem;
+}
+.hero-content {
+  max-width: 95%;
+  margin: auto;
+}
+
+/* Navbar collapse (mobile menu) */
+.navbar-collapse {
+  background: rgba(10, 10, 10, 0.95);
+  padding: 2rem;
+  border-radius: 12px;
+  text-align: center;
+}
+.nav-link {
+  font-size: 1rem;
+  display: block;
+  margin: 12px 0;
+  color: #fff !important;
+}
+.order-btn {
+  margin-top: 15px;
+  width: 100%;
+}
+
+/* Smooth transition helper */
 .transition-all {
   transition: all 0.4s ease-in-out;
+}
+
+/* -----------------------------------
+   Tablet / Desktop (768px and up)
+----------------------------------- */
+@media (min-width: 768px) {
+  .navbar-logo {
+    height: clamp(60px, 8vw, 100px);
+  }
+  .brand-text {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  }
+
+  .hero {
+    padding: 2rem 4rem;
+  }
+  .hero-content {
+    max-width: 75%;
+  }
+  .hero-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+  }
+  .hero-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+  }
+  .hero-logo {
+    height: clamp(70px, 18vw, 120px);
+  }
+
+  .order-btn {
+    width: auto;
+  }
 }
