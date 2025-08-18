@@ -1,6 +1,6 @@
 {
-  "homepage": "https://ionut-cora.github.io/react-restaurant/",
-  "name": "react-restaurant",
+  "homepage": "https://dil-khush.co.uk/",
+  "name": "estaurant",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -49,6 +49,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.0"
+    "gh-pages": "^6.3.0"
   }
 }
