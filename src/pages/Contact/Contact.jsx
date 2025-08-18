@@ -8,7 +8,7 @@ import Reviews from '../../components/Reviews/Reviews';
 function Contact() {
   return (
     <div className='contact-page' id='contact-page'>
-      <header className='height-50 mt-5'>
+      <header className='height-50'>
         <motion.div 
           className="container h-100 d-flex align-items-center justify-content-center"
           initial={{ opacity: 0, y: -50 }}

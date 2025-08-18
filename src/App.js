@@ -1,5 +1,5 @@
 import './App.css';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link, NavLink, Routes, Route } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -8,58 +8,77 @@ import Menu from './pages/Menu/Menu';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import { useState, useEffect } from 'react';
+import { motion } from "framer-motion";
 
-// Import your restaurant logo
+// Restaurant Logo
 import logo from '../src/utils/images/logo.png';
 
 function App() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <div id='app'>
+    <div id="app">
       {/* Navbar */}
-      <Navbar expand='lg' className='fixed-top bg-white shadow'>
+      <Navbar 
+        expand="lg" 
+        fixed="top" 
+        className={`py-3 ${scrolled ? 'navbar-colored shadow-sm' : 'navbar-transparent'} transition-all`}
+      >
         <Container>
-          <Navbar.Brand>
-            <Link to='/' className='navbar-brand d-flex align-items-center'>
-              <img 
-                src={logo} 
-                alt='Dil Khush Kitchen' 
-                className='navbar-logo'
-              />
-            </Link>
+          <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
+            <img 
+              src={logo} 
+              alt="Dil Khush Kitchen" 
+              className="navbar-logo me-2"
+            />
+            <span className="fw-bold brand-text">Dil Khush Kitchen</span>
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls='basic-navbar-nav' />
-          <Navbar.Collapse className='text-center' id='basic-navbar-nav'>
-            <Nav className='me-auto justify-content-center w-100'>
-              <Link to='/' className='nav-link text-uppercase text-success text-center fw-semibold'>
-                Home
-              </Link>
-              <Link to='/menu' className='nav-link text-uppercase text-success text-center fw-semibold'>
-                Menu
-              </Link>
-              <Link to='/about' className='nav-link text-uppercase text-success text-center fw-semibold'>
-                About
-              </Link>
-              <Link to='/contact' className='nav-link text-uppercase text-success text-center fw-semibold'>
-                Contact
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+            <Nav className="align-items-center">
+              {['Home', 'Menu', 'About', 'Contact'].map((item) => (
+                <NavLink 
+                  key={item}
+                  to={item === 'Home' ? '/' : `/${item.toLowerCase()}`} 
+                  className={({ isActive }) => 
+                    `nav-link mx-2 text-uppercase fw-semibold ${isActive ? 'active-link' : ''}`
+                  }
+                >
+                  {item}
+                </NavLink>
+              ))}
+              <Link to="/contact">
+                <motion.button 
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="btn order-btn ms-lg-3"
+                >
+                  Order Now
+                </motion.button>
               </Link>
             </Nav>
-            <Link to='/contact'>
-              <button type='button' className='btn btn-success rounded-0 text-capitalize my-3 my-lg-0 ms-lg-4 text-nowrap'>
-                Order Now
-              </button>
-            </Link>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
       {/* Routes */}
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/menu' element={<Menu />} />
-        <Route path='/about' element={<About />} />
-        <Route path='/contact' element={<Contact />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
 
+      {/* Footer */}
       <Footer />
     </div>
   );

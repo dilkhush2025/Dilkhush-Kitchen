@@ -9,11 +9,11 @@ import Reviews from '../../components/Reviews/Reviews';
 function About() {
   return (
     <div className='about-page'>
-      <header className='height-50 mt-5'>
+      <header className='height-50'>
         <motion.div 
           className="container h-100 d-flex align-items-center justify-content-center"
           initial={{ opacity: 0, y: -50 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
           <h1 className='text-light'>About</h1>
