@@ -1,0 +1,21 @@
+/* Navbar logo styling */
+.navbar-logo {
+  height: 100px;       /* larger for visibility */
+  width: auto;        /* maintain aspect ratio */
+  border: none;       /* remove border if present */
+  outline: none;      /* remove outline */
+  object-fit: contain;
+  display: block;
+}
+
+/* Responsive logo on smaller screens */
+@media (max-width: 768px) {
+  .navbar-logo {
+    height: 80px;     /* still visible but fits mobile */
+  }
+}
+
+/* Ensure navbar is fully white */
+.navbar {
+  background-color: #fff !important;
+}

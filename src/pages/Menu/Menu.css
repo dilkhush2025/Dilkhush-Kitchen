@@ -1,0 +1,131 @@
+/* --- Page Header --- */
+.menu-header {
+  background: url('../../utils/images/menu-section-img.jpg') center/cover no-repeat;
+  padding: 6rem 0;
+  position: relative;
+}
+
+.header-content h1 {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* --- Menu Section --- */
+.menu-container {
+  margin: 3rem auto;
+  max-width: 900px;
+}
+
+.menu-section {
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Header */
+.menu-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(90deg, #ff9e67, #ffb380);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  transition: background 0.3s;
+}
+
+.menu-section-header:hover {
+  background: linear-gradient(90deg, #ffb380, #ff9e67);
+}
+
+.arrow {
+  font-size: 1.3rem;
+  transition: transform 0.3s;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+/* Items */
+.menu-items {
+  background: #1a1a1a;
+  padding: 1.5rem 2rem;
+}
+
+.section-image {
+  width: 100%;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 20px rgba(255, 160, 100, 0.3);
+}
+
+.menu-card {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: #222;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.menu-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(255, 160, 100, 0.4);
+}
+
+.item-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin-right: 1.5rem;
+  box-shadow: 0 4px 15px rgba(255, 160, 100, 0.3);
+}
+
+.item-info h3 {
+  font-size: 1.3rem;
+  color: #ffb380;
+  margin-bottom: 0.3rem;
+}
+
+.item-info p {
+  color: #d1d1d1;
+  margin: 0.2rem 0;
+}
+
+.item-info .price {
+  font-weight: 700;
+  color: #ff9e67;
+}
+
+/* --- CTA Button --- */
+.cta-container {
+  display: flex;
+  justify-content: center;
+  margin: 4rem 0;
+}
+
+.btn-reserve {
+  background: linear-gradient(90deg, #ff9e67, #ffb380);
+  border: none;
+  padding: 1rem 2rem;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-reserve:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 160, 100, 0.4);
+}
