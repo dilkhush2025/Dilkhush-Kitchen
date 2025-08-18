@@ -19,20 +19,23 @@ body {
 }
 
 .navbar-logo {
-  height: 65px;
+  height: clamp(60px, 8vw, 100px); /* mobile min → scale → desktop max */
   object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.brand-logo {
-  display: flex;
-  align-items: center;
+.navbar-logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
 }
+
+/* Brand text next to logo */
 .brand-text {
   font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  color: #e6c07b; /* rich gold */
-  letter-spacing: 2px;
-  text-transform: uppercase;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: #e6c07b;
+  letter-spacing: 1px;
+  margin-left: 0.3rem;
 }
 
 /* Nav Links */
