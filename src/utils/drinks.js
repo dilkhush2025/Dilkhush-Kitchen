@@ -2,31 +2,31 @@ const drinks = [
   {
     id: 1,
     name: "Fries",
-    description: "No description required",
+    
     price: "£0.99"
   },
   {
     id: 2,
     name: "Curley Fries",
-    description: "No description required",
+    
     price: "£0.99"
   },
   {
     id: 3,
     name: "Nuggets (6 pcs) with Chips",
-    description: "No description required",
+    
     price: "£3.99"
   },
   {
     id: 4,
     name: "Fish Fingers (3 pcs) with Chips",
-    description: "No description required",
+    
     price: "£3.99"
   },
   {
     id: 5,
     name: "Cheese Dippers with Chips",
-    description: "No description required",
+    
     price: "£2.99"
   },
   {
@@ -44,7 +44,7 @@ const drinks = [
   {
     id: 8,
     name: "Egg Fried Rice",
-    description: "No description required",
+    
     price: "£2.49"
   },
   {

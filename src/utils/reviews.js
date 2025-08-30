@@ -1,35 +1,35 @@
-import Person1Img from './images/person1-img.jpg';
-import Person2Img from './images/person2-img.jpg';
-import Person3Img from './images/person3-img.jpg';
-import Person4Img from './images/person4-img.jpg';
+import Person1Img from './images/jackmoore.png';
+import Person2Img from './images/J.png';
+import Person3Img from './images/austin.png';
+import Person4Img from './images/akash.png';
 
 const reviews = [
     {
         id: 1,
-        description: 'This restaurant has the best food in Gloucester and I recommend it.',
+        description: 'The food was amazing. Filled with authentic Indian flavors. A must try for any Indian food lovers in Gloucester.',
         img: [Person1Img],
-        name: 'John Mike',
+        name: 'Jack Moore',
         initialMotion: '-300px'
     },
     {
         id: 2,
-        description: 'I ate at Dilkhush Kitchen last week and I really enjoyed it.',
+        description: 'Everything we ordered was delicious - the herbs and spices were varied and really fresh-tasting. The starters were very interesting and well worth trying out alongside the mains.',
         img: [Person2Img],
-        name: 'Maria Cruz',
+        name: 'Jon Marriette',
         initialMotion: '350px'
     },
     {
         id: 3,
-        description: 'A friend recommended this restaurant to me and I am really glad I came and ate here.',
+        description: 'Super Apna home food, nothing to compare in Glos.',
         img: [Person3Img],
-        name: 'Anna Gold',
+        name: 'Austin Parry',
         initialMotion: '-300px'
     },
     {
         id: 4,
-        description: 'Very nice restaurant, very good food and the staff is very professional.',
+        description: 'I’ve tried quite a few Indian takeaways in Gloucester, but this one stands out as the best by far. The food is packed with authentic flavors. If you love Indian food, this place is 100% worth trying.',
         img: [Person4Img],
-        name: 'Nick Burn',
+        name: 'Akash Pandey',
         initialMotion: '350px'
     }
 ];

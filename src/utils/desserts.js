@@ -8,7 +8,6 @@ const desserts = [
   {
     id: 2,
     name: "Gajar Halwa",
-    description: "No description required",
     price: "£3.85"
   }
 ];
