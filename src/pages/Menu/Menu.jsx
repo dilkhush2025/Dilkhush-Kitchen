@@ -43,26 +43,25 @@ function Menu() {
 const checkout = () => {
   if (!cart.length) return alert('Cart is empty!');
 
+  // Calculate total price
+  const total = cart.reduce((sum, i) => sum + (parseFloat(i.price.replace(/[^0-9.-]+/g,"")) * i.quantity), 0);
+
   const message = cart
-    .map(i => `${i.name} x${i.quantity}`)
+    .map(i => `${i.name} x${i.quantity} (${i.price})`)
     .join(', ');
 
-  const text = `Hello, I'd like to order: ${message}`;
+  const text = `Hello, I'd like to order: ${message}. Total: £${total.toFixed(2)}`;
 
-  // Ensure full international format, no +, no spaces
-  const phoneNumber = '0447877595717';
+  const phoneNumber = '447877595717';
 
-  // Create a temporary anchor element
+  // Use anchor click to avoid mobile popup issues
   const link = document.createElement('a');
   link.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
   link.target = '_blank';
-
-  // Append, trigger click, remove
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);
 };
-
 
   const currentSection = menuSections[activeSection];
 
