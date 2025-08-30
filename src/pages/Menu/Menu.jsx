@@ -43,7 +43,7 @@ function Menu() {
   const checkout = () => {
     if (!cart.length) return alert('Cart is empty!');
     const message = `Hello, I'd like to order: ${cart.map(i => `${i.name} x${i.quantity}`).join(', ')}`;
-    const phoneNumber = '0447894146082';
+    const phoneNumber = '0447877595717';
     window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
   };
 
