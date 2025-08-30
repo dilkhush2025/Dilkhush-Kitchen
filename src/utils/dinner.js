@@ -2,16 +2,19 @@ const dinner = [
   {
     id: 1,
     name: "Plain Rice",
+    description: "No description required",
     price: "£5.20"
   },
   {
     id: 2,
     name: "Jeera Rice",
+    description: "No description required",
     price: "£6.90"
   },
   {
     id: 3,
     name: "Jeera Rice (with Tadka Dal)",
+    description: "No description required",
     price: "£9.80"
   },
   {
@@ -23,6 +26,7 @@ const dinner = [
   {
     id: 5,
     name: "Masala Khichdi with Kadhi",
+    description: "No description required",
     price: "£7.90"
   },
   {
@@ -64,6 +68,7 @@ const dinner = [
   {
     id: 12,
     name: "Egg Fried Rice",
+    description: "No description required",
     price: "£7.95"
   },
   {

@@ -14,7 +14,7 @@ function ContactInfo() {
         <h3 className='text-capitalize'>Opening hours</h3>
         <p className="m-0">Tue - Fri: 16:00 - 22:00</p>
         <p className="m-0">Sat - Sun: 12:00 - 22:00</p>
-        <p>Mon: closed</p>
+        <p>Sat - Sun: 10:00 - 15:00</p>
     </motion.div>
   )
 }

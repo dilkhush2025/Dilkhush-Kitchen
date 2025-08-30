@@ -2,16 +2,19 @@ const colddrinks = [
   {
     id: 1,
     name: "Coke/Diet/Seven Up/Fanta",
+    description: "No description required",
     price: "£1.50"
   },
   {
     id: 2,
     name: "Sweet Lassi - Plain",
+    description: "No description required",
     price: "£2.20"
   },
   {
     id: 3,
     name: "Sweet Lassi - Mango",
+    description: "No description required",
     price: "£2.50"
   },
   {
