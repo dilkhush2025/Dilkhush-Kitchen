@@ -67,7 +67,7 @@ export default function ImageGallery() {
       </Swiper>
       <Swiper
         onSwiper={setThumbsSwiper}
-        spaceBetween={10}
+        spaceBetween={6}
         slidesPerView={4}
         freeMode={true}
         watchSlidesProgress={true}
