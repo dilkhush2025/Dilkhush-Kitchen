@@ -40,12 +40,29 @@ function Menu() {
     setCart(prev => prev.map(i => i.id === id ? { ...i, quantity: i.quantity - 1 } : i).filter(i => i.quantity > 0));
   };
 
-  const checkout = () => {
-    if (!cart.length) return alert('Cart is empty!');
-    const message = `Hello, I'd like to order: ${cart.map(i => `${i.name} x${i.quantity}`).join(', ')}`;
-    const phoneNumber = '447877595717';
-    window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
-  };
+const checkout = () => {
+  if (!cart.length) return alert('Cart is empty!');
+
+  const message = cart
+    .map(i => `${i.name} x${i.quantity}`)
+    .join(', ');
+
+  const text = `Hello, I'd like to order: ${message}`;
+
+  // Ensure full international format, no +, no spaces
+  const phoneNumber = '0447877595717';
+
+  // Create a temporary anchor element
+  const link = document.createElement('a');
+  link.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+  link.target = '_blank';
+
+  // Append, trigger click, remove
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 
   const currentSection = menuSections[activeSection];
 
