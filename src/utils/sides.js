@@ -14,25 +14,25 @@ const sides = [
   {
     id: 3,
     name: "Curd (Plain)",
-    description: "No description required",
+    
     price: "£2.00"
   },
   {
     id: 4,
     name: "Extra Pau",
-    description: "No description required",
+    
     price: "£1.00"
   },
   {
     id: 5,
     name: "Extra Sāmbhar",
-    description: "No description required",
+    
     price: "£1.00"
   },
   {
     id: 6,
     name: "Coriander and Mint Chutney",
-    description: "No description required",
+    
     price: "£1.00"
   },
   {

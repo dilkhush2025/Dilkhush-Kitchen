@@ -101,7 +101,7 @@ function Menu() {
         transition={{ duration: 1 }}
       >
         <Link to='/contact'>
-          <button className="btn-reserve">Book Your Table</button>
+          <button className="btn-reserve">Order Now</button>
         </Link>
       </motion.div>
     </div>
