@@ -1,12 +1,12 @@
 /* --- Page Header --- */
 .menu-header {
   background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('../../utils/images/menu-section-img.jpg') center/cover no-repeat;
-  padding: 7rem 0;
+  padding: 12rem 0;
   position: relative;
 }
 .header-content h1 {
   color: #fff;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   text-align: center;

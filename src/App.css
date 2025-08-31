@@ -6,7 +6,7 @@
 :root {
   --bg: #fafafa;
   --page-text: #222;
-  --nav-bg-dark: #000; /* solid black navbar */
+  --nav-bg-dark: rgba(0, 0, 0, 0.50); /* solid black navbar */
   --nav-bg-mobile: rgba(10,10,10,0.95);
   --accent-gold: #e6c07b;
   --accent-brown: #b07a3f;
