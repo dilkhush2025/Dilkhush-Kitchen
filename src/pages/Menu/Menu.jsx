@@ -29,7 +29,7 @@ function Menu() {
   const [cartOpen, setCartOpen] = useState(false);
 
   const addToCart = (item) => {
-    setCart((prev) => {
+    setCart(prev => {
       const existing = prev.find(i => i.id === item.id);
       if (existing) return prev.map(i => i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i);
       return [...prev, { ...item, quantity: 1 }];
@@ -40,28 +40,21 @@ function Menu() {
     setCart(prev => prev.map(i => i.id === id ? { ...i, quantity: i.quantity - 1 } : i).filter(i => i.quantity > 0));
   };
 
-const checkout = () => {
-  if (!cart.length) return alert('Cart is empty!');
+  const checkout = () => {
+    if (!cart.length) return alert('Cart is empty!');
 
-  // Calculate total price
-  const total = cart.reduce((sum, i) => sum + (parseFloat(i.price.replace(/[^0-9.-]+/g,"")) * i.quantity), 0);
+    const total = cart.reduce((sum, i) => sum + (parseFloat(i.price.replace(/[^0-9.-]+/g, '')) * i.quantity), 0);
+    const message = cart.map(i => `${i.name} x${i.quantity} (${i.price})`).join(', ');
+    const text = `Hello, I'd like to order: ${message}. Total: £${total.toFixed(2)}`;
 
-  const message = cart
-    .map(i => `${i.name} x${i.quantity} (${i.price})`)
-    .join(', ');
-
-  const text = `Hello, I'd like to order: ${message}. Total: £${total.toFixed(2)}`;
-
-  const phoneNumber = '447877595717';
-
-  // Use anchor click to avoid mobile popup issues
-  const link = document.createElement('a');
-  link.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
-  link.target = '_blank';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
+    const phoneNumber = '447877595717';
+    const link = document.createElement('a');
+    link.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   const currentSection = menuSections[activeSection];
 
@@ -80,22 +73,26 @@ const checkout = () => {
       </header>
 
       {/* Topbar Tabs + Cart */}
-      <div className="menu-topbar">
-        <div className="menu-tabs">
-          {menuSections.map((sec, idx) => (
-            <button
-              key={sec.title}
-              className={`tab-btn ${idx === activeSection ? 'active' : ''}`}
-              onClick={() => setActiveSection(idx)}
-            >
-              {sec.title}
-            </button>
-          ))}
-        </div>
-        <button className="cart-preview" onClick={() => setCartOpen(true)}>
-          Cart ({cart.reduce((acc, i) => acc + i.quantity, 0)})
+{/* Topbar Tabs + Cart */}
+<div className="menu-topbar">
+  <div className="menu-tabs-wrapper">
+    <div className="menu-tabs">
+      {menuSections.map((sec, idx) => (
+        <button
+          key={sec.title}
+          className={`tab-btn ${idx === activeSection ? 'active' : ''}`}
+          onClick={() => setActiveSection(idx)}
+        >
+          {sec.title}
         </button>
-      </div>
+      ))}
+    </div>
+  </div>
+  <button className="cart-preview" onClick={() => setCartOpen(true)}>
+    Cart ({cart.reduce((acc, i) => acc + i.quantity, 0)})
+  </button>
+</div>
+
 
       {/* Active Section */}
       <div className="menu-container">
@@ -123,7 +120,7 @@ const checkout = () => {
         </div>
       </div>
 
-      {/* Floating Cart Button (bottom right) */}
+      {/* Floating Cart Button */}
       <button className="floating-cart-btn" onClick={() => setCartOpen(true)}>
         Cart ({cart.reduce((acc, i) => acc + i.quantity, 0)})
       </button>

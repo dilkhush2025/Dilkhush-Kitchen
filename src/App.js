@@ -1,4 +1,4 @@
-// app.js (updated collapse behavior)
+// App.jsx
 import './App.css';
 import { Link, NavLink, Routes, Route } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
@@ -17,22 +17,16 @@ import logo from '../src/utils/images/logo.png';
 
 function App() {
   const [scrolled, setScrolled] = useState(false);
-  const [expanded, setExpanded] = useState(false); // control navbar collapse
+  const [expanded, setExpanded] = useState(false); // controls navbar collapse
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // helper: close navbar and (optionally) navigate
-  const handleNavClick = () => {
-    // close the mobile collapse immediately after click
-    setExpanded(false);
-    // allow route change to proceed (NavLink/Link does it)
-  };
+  // Close mobile navbar after clicking a link
+  const handleNavClick = () => setExpanded(false);
 
   return (
     <div id="app">
@@ -45,18 +39,18 @@ function App() {
         className={`py-3 ${scrolled ? 'navbar-colored shadow-sm' : 'navbar-transparent'} transition-all`}
       >
         <Container>
+          {/* Logo */}
           <Navbar.Brand as={Link} to="/" className="d-flex align-items-center" onClick={handleNavClick}>
-            <img
-              src={logo}
-              alt="Dil Khush Kitchen"
-              className="navbar-logo me-2"
-            />
+            <img src={logo} alt="Dil Khush Kitchen" className="navbar-logo me-2" />
             <span className="fw-bold brand-text">Dil Khush Kitchen</span>
           </Navbar.Brand>
 
-          <Navbar.Toggle aria-controls="basic-navbar-nav" aria-expanded={expanded} onClick={() => setExpanded(prev => !prev)} />
+          {/* Hamburger toggle */}
+          <Navbar.Toggle aria-controls="basic-navbar-nav" aria-expanded={expanded} />
+
+          {/* Links */}
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-            <Nav className="align-items-center">
+            <Nav className="align-items-center flex-column flex-lg-row">
               {['Home', 'Menu', 'About', 'Contact'].map((item) => (
                 <NavLink
                   key={item}
@@ -69,7 +63,9 @@ function App() {
                   {item}
                 </NavLink>
               ))}
-              <Link to="/contact" onClick={handleNavClick}>
+
+              {/* Order Now button */}
+              <Link to="/contact" onClick={handleNavClick} className="mt-2 mt-lg-0">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

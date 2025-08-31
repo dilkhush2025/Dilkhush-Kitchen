@@ -3,10 +3,10 @@
 /* ========================
    Variables
    ======================== */
-:root{
+:root {
   --bg: #fafafa;
   --page-text: #222;
-  --nav-bg-dark: rgba(10,10,10,0.92);
+  --nav-bg-dark: #000; /* solid black navbar */
   --nav-bg-mobile: rgba(10,10,10,0.95);
   --accent-gold: #e6c07b;
   --accent-brown: #b07a3f;
@@ -19,7 +19,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap');
 
 * { box-sizing: border-box; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
-html,body,#root,#app { height:100%; }
+html, body, #root, #app { height:100%; }
 
 /* ========================
    Base
@@ -33,36 +33,148 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Ensure navbar sits above all content */
+/* ========================
+   Navbar
+   ======================== */
 .navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
   z-index: 1100;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
-/* ========================
-   Navbar - states
-   ======================== */
-.navbar-transparent {
-  background: transparent !important;
-  box-shadow: none;
+/* Navbar states */
+.navbar-transparent,
+.navbar-colored {
+  background: var(--nav-bg-dark) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   transition: background var(--transition), box-shadow var(--transition);
 }
 
-/* On mobile, avoid showing body (white) behind the transparent nav:
-   make transparent nav behave dark so you don't get a white top strip. */
+/* Navbar brand/logo */
+.navbar-logo {
+  height: clamp(40px, 8vw, 80px);
+  object-fit: contain;
+  transition: transform var(--transition), filter var(--transition);
+}
+.navbar-logo:hover {
+  transform: translateY(-2px) scale(1.04);
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
+}
+.brand-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(0.95rem, 3.2vw, 1.6rem);
+  color: var(--accent-gold);
+  letter-spacing: 0.6px;
+  margin-left: 0.35rem;
+}
+
+/* Nav Links */
+.nav-link {
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  color: #fff !important;
+  padding: 0.25rem 0.5rem;
+  white-space: nowrap;
+  transition: color var(--transition);
+}
+.nav-link:hover, .nav-link:focus {
+  color: var(--accent-gold) !important;
+}
+.active-link {
+  color: var(--accent-gold) !important;
+  font-weight: 600;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -6px;
+  left: 0;
+  background: var(--accent-gold);
+  transition: width var(--transition);
+}
+.nav-link:hover::after,
+.active-link::after {
+  width: 100%;
+}
+
+/* Buttons */
+.order-btn {
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-brown));
+  border: none;
+  color: #111;
+  padding: 10px 22px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.order-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(176,122,63,0.18);
+}
+
+/* Mobile menu */
 @media (max-width: 768px) {
-  .navbar-transparent {
-    background: var(--nav-bg-mobile) !important;
-    backdrop-filter: var(--glass-blur);
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--nav-bg-mobile);
+    padding: 1.6rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+    width: 100%;
+    z-index: 1200;
+  }
+
+  .navbar-collapse .nav {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .nav-link {
+    display: block;
+    font-size: 1rem;
+    margin: 0.8rem 0;
+    color: #fff !important;
+  }
+
+  .order-btn {
+    width: 100%;
+    margin-top: 16px;
   }
 }
 
-/* When scrolled / colored */
-.navbar-colored {
-  background: var(--nav-bg-dark) !important;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+/* Desktop / Tablet menu */
+@media (min-width: 992px) {
+  .navbar-collapse .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem; /* spacing between links and button */
+    flex-wrap: wrap;
+  }
+
+  .nav-link {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #fff !important;
+  }
+
+  .order-btn {
+    margin-left: 1rem;
+  }
 }
 
 /* Logo */
@@ -87,12 +199,11 @@ body {
   line-height: 1;
 }
 
-/* Nav Links (default) */
+/* Nav Links */
 .nav-link {
   position: relative;
   font-size: 0.95rem;
   letter-spacing: 1px;
-  color: #fff !important;
   padding: 0.25rem 0.35rem;
   transition: color var(--transition);
   cursor: pointer;
@@ -105,7 +216,7 @@ body {
   font-weight: 600;
 }
 
-/* underline slide */
+/* underline animation */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -156,7 +267,7 @@ body {
 }
 
 /* ========================
-   Buttons (gold accent - removed green)
+   Buttons (gold accent)
    ======================== */
 .order-btn, .hero-btn {
   background: linear-gradient(135deg, var(--accent-gold), var(--accent-brown));
@@ -184,35 +295,6 @@ body {
 }
 
 /* ========================
-   Navbar collapse (mobile menu)
-   ======================== */
-.navbar-collapse {
-  background: transparent;
-  width: 100%;
-  border-radius: 12px;
-  padding: 1.4rem;
-}
-
-/* inside collapse, make a clear panel */
-@media (max-width: 768px) {
-  .navbar-collapse {
-    background: var(--nav-bg-mobile);
-    padding: 1.6rem;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
-  }
-  .nav-link {
-    display: block;
-    margin: 0.55rem 0;
-    font-size: 1rem;
-    color: #fff !important;
-  }
-  .order-btn {
-    width: 100%;
-    margin-top: 12px;
-  }
-}
-
-/* ========================
    Utilities & helpers
    ======================== */
 .transition-all {
@@ -228,20 +310,3 @@ body {
 
 /* spacing helpers used across layout */
 .container-wide { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
-
-/* ========================
-   Desktop / tablet layout (min-width: 768px)
-   ======================== */
-@media (min-width: 768px) {
-  .navbar-logo { height: clamp(52px, 7vw, 100px); }
-  .brand-text { font-size: clamp(1.1rem, 2.2vw, 1.8rem); }
-
-  .hero {
-    padding: 2.25rem 2.5rem;
-  }
-  .hero-content { max-width: 75%; margin: 0 auto; }
-  .hero-title { font-size: clamp(1.9rem, 4vw, 3rem); }
-  .hero-subtitle { font-size: clamp(1rem, 2.6vw, 1.3rem); }
-
-  .nav-link { margin-left: 0.5rem; margin-right: 0.5rem; }
-}
