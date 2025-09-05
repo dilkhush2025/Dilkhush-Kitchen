@@ -1,0 +1,13 @@
+/* Home Page Header */
+.home-header {
+    background-image: linear-gradient(90deg, rgba(255,0,161,0.75), rgba(255,255,0,0.75), rgba(0,0,255,0.75)), url(../../utils/images/home-header-img.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 12rem 0;
+}
+
+@media only screen and (max-width: 576px) {
+    .home-header {
+        background-image: linear-gradient(90deg, rgba(255,0,161,0.65), rgba(255,255,0,0.65), rgba(0,0,255,0.65)), url(../../utils/images/home-header-img.jpg);
+    }
+}

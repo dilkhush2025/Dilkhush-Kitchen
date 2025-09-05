@@ -41,9 +41,9 @@ function App() {
         <Container>
           {/* Logo */}
           <Navbar.Brand as={Link} to="/" className="d-flex align-items-center" onClick={handleNavClick}>
-            <img src={logo} alt="Dil Khush Kitchen" className="navbar-logo me-2" />
-            <span className="fw-bold brand-text">Dil Khush Kitchen</span>
-          </Navbar.Brand>
+  <img src={logo} alt="Dil Khush Kitchen" className="navbar-logo me-2" />
+  <span className="fw-bold brand-text">Dil Khush Kitchen</span>
+</Navbar.Brand>
 
           {/* Hamburger toggle */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" aria-expanded={expanded} />

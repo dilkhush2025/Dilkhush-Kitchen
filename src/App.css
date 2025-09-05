@@ -1,4 +1,4 @@
-/* app.css - polished, mobile-first, gold-accent theme */
+/* app.css - mobile-first, pink-yellow brand theme */
 
 /* ========================
    Variables
@@ -6,10 +6,11 @@
 :root {
   --bg: #fafafa;
   --page-text: #222;
-  --nav-bg-dark: rgba(0, 0, 0, 0.50); /* solid black navbar */
+  --nav-bg-dark: rgba(0, 0, 0, 0.50);
   --nav-bg-mobile: rgba(10,10,10,0.95);
-  --accent-gold: #e6c07b;
-  --accent-brown: #b07a3f;
+  --accent-pink: #FF00A1;
+  --accent-yellow: #FFFF00;
+  --accent-blue: #0000FF; /* optional, avoid in gradients */
   --muted: #9b9b9b;
   --glass-blur: blur(8px);
   --transition: 0.32s cubic-bezier(.2,.9,.2,1);
@@ -49,7 +50,7 @@ body {
 .navbar-transparent,
 .navbar-colored {
   background: var(--nav-bg-dark) !important;
-  backdrop-filter: blur(8px);
+  backdrop-filter: var(--glass-blur);
   box-shadow: 0 6px 18px rgba(0,0,0,0.12);
   transition: background var(--transition), box-shadow var(--transition);
 }
@@ -68,132 +69,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-weight: 600;
   font-size: clamp(0.95rem, 3.2vw, 1.6rem);
-  color: var(--accent-gold);
-  letter-spacing: 0.6px;
-  margin-left: 0.35rem;
-}
-
-/* Nav Links */
-.nav-link {
-  font-size: 0.95rem;
-  letter-spacing: 1px;
-  color: #fff !important;
-  padding: 0.25rem 0.5rem;
-  white-space: nowrap;
-  transition: color var(--transition);
-}
-.nav-link:hover, .nav-link:focus {
-  color: var(--accent-gold) !important;
-}
-.active-link {
-  color: var(--accent-gold) !important;
-  font-weight: 600;
-}
-.nav-link::after {
-  content: '';
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  bottom: -6px;
-  left: 0;
-  background: var(--accent-gold);
-  transition: width var(--transition);
-}
-.nav-link:hover::after,
-.active-link::after {
-  width: 100%;
-}
-
-/* Buttons */
-.order-btn {
-  background: linear-gradient(135deg, var(--accent-gold), var(--accent-brown));
-  border: none;
-  color: #111;
-  padding: 10px 22px;
-  border-radius: 40px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  white-space: nowrap;
-  transition: transform var(--transition), box-shadow var(--transition);
-}
-.order-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(176,122,63,0.18);
-}
-
-/* Mobile menu */
-@media (max-width: 768px) {
-  .navbar-collapse {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: var(--nav-bg-mobile);
-    padding: 1.6rem;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
-    width: 100%;
-    z-index: 1200;
-  }
-
-  .navbar-collapse .nav {
-    flex-direction: column;
-    gap: 0.8rem;
-    width: 100%;
-    flex-wrap: wrap;
-  }
-
-  .nav-link {
-    display: block;
-    font-size: 1rem;
-    margin: 0.8rem 0;
-    color: #fff !important;
-  }
-
-  .order-btn {
-    width: 100%;
-    margin-top: 16px;
-  }
-}
-
-/* Desktop / Tablet menu */
-@media (min-width: 992px) {
-  .navbar-collapse .nav {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 2rem; /* spacing between links and button */
-    flex-wrap: wrap;
-  }
-
-  .nav-link {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #fff !important;
-  }
-
-  .order-btn {
-    margin-left: 1rem;
-  }
-}
-
-/* Logo */
-.navbar-logo {
-  height: clamp(40px, 8vw, 80px);
-  object-fit: contain;
-  transition: transform var(--transition), filter var(--transition);
-}
-.navbar-logo:hover {
-  transform: translateY(-2px) scale(1.04);
-  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.25));
-}
-
-/* Brand text */
-.brand-text {
-  font-family: 'Playfair Display', serif;
-  font-weight: 600;
-  font-size: clamp(0.95rem, 3.2vw, 1.6rem);
-  color: var(--accent-gold);
+  color: var(--accent-pink);
   letter-spacing: 0.6px;
   margin-left: 0.35rem;
   line-height: 1;
@@ -207,16 +83,15 @@ body {
   padding: 0.25rem 0.35rem;
   transition: color var(--transition);
   cursor: pointer;
+  color: #fff !important;
 }
 .nav-link:hover, .nav-link:focus {
-  color: var(--accent-gold) !important;
+  color: var(--accent-pink) !important;
 }
 .active-link {
-  color: var(--accent-gold) !important;
+  color: var(--accent-pink) !important;
   font-weight: 600;
 }
-
-/* underline animation */
 .nav-link::after {
   content: '';
   position: absolute;
@@ -224,12 +99,33 @@ body {
   height: 2px;
   bottom: -6px;
   left: 0;
-  background: var(--accent-gold);
+  background: var(--accent-pink);
   transition: width var(--transition);
 }
 .nav-link:hover::after,
 .active-link::after {
   width: 100%;
+}
+
+/* ========================
+   Buttons (pink → yellow gradient)
+   ======================== */
+.order-btn, .hero-btn, .menu-btn-gold {
+  background: linear-gradient(135deg, var(--accent-pink), var(--accent-yellow));
+  border: none;
+  color: #111;
+  padding: 10px 22px;
+  border-radius: 40px;
+  font-weight: 700;
+  font-size: clamp(0.85rem, 2.4vw, 1rem);
+  white-space: nowrap;
+  box-shadow: 0 8px 20px rgba(255,0,161,0.14);
+  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
+}
+.order-btn:hover, .hero-btn:hover, .menu-btn-gold:hover, .order-btn:focus {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(255,0,161,0.28);
+  color: #111;
 }
 
 /* ========================
@@ -241,12 +137,10 @@ body {
   position: relative;
   color: #fff;
 }
-
 .hero-content {
   max-width: 95%;
   margin: 0 auto;
 }
-
 .hero-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(1.5rem, 6vw, 2.6rem);
@@ -257,7 +151,7 @@ body {
 }
 .hero-subtitle {
   font-size: clamp(0.9rem, 4vw, 1.15rem);
-  color: var(--accent-gold);
+  color: var(--accent-pink);
   margin-bottom: 1rem;
 }
 .hero-logo {
@@ -267,30 +161,57 @@ body {
 }
 
 /* ========================
-   Buttons (gold accent)
+   Mobile menu
    ======================== */
-.order-btn, .hero-btn {
-  background: linear-gradient(135deg, var(--accent-gold), var(--accent-brown));
-  border: none;
-  color: #111;
-  padding: 10px 20px;
-  border-radius: 40px;
-  font-weight: 700;
-  font-size: clamp(0.85rem, 2.4vw, 1rem);
-  letter-spacing: 0.6px;
-  white-space: nowrap;
-  box-shadow: 0 8px 20px rgba(176,122,63,0.14);
-  transition: transform var(--transition), box-shadow var(--transition), filter var(--transition);
-}
-.order-btn:hover, .hero-btn:hover, .order-btn:focus {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 12px 30px rgba(176,122,63,0.18);
+@media (max-width: 768px) {
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--nav-bg-mobile);
+    padding: 1.6rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+    width: 100%;
+    z-index: 1200;
+  }
+  .navbar-collapse .nav {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .nav-link {
+    display: block;
+    font-size: 1rem;
+    margin: 0.8rem 0;
+    color: #fff !important;
+  }
+  .order-btn {
+    width: 100%;
+    margin-top: 16px;
+  }
 }
 
-/* make order btn prominent on large screens */
+/* ========================
+   Desktop / Tablet menu
+   ======================== */
 @media (min-width: 992px) {
+  .navbar-collapse .nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .nav-link {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #fff !important;
+  }
   .order-btn {
-    padding: 12px 28px;
+    margin-left: 1rem;
   }
 }
 
@@ -300,13 +221,25 @@ body {
 .transition-all {
   transition: all var(--transition) ease-in-out;
 }
-
-/* subtle accessible focus outline */
 .nav-link:focus, .order-btn:focus, .navbar-toggle:focus {
-  outline: 3px solid rgba(230,192,123,0.16);
+  outline: 3px solid rgba(255,0,161,0.16);
   outline-offset: 3px;
   border-radius: 8px;
 }
-
-/* spacing helpers used across layout */
 .container-wide { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+
+/* Gradient for brand text */
+.brand-text {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  font-size: clamp(0.95rem, 3.2vw, 1.6rem);
+  letter-spacing: 0.6px;
+  margin-left: 0.35rem;
+  line-height: 1;
+
+  /* Gradient text */
+  background: linear-gradient(135deg, #FFFF00, #FF8C00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}

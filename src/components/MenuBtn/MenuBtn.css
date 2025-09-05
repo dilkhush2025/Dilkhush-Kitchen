@@ -1,0 +1,16 @@
+.menu-btn-gradient {
+  background: linear-gradient(90deg, #FF00A1, #FFFF00);
+  color: #000; /* black text for contrast */
+  font-weight: 700;
+  border: none;
+  padding: 0.8rem 2rem;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.menu-btn-gradient:hover {
+  background: linear-gradient(90deg, #FFFF00, #FF00A1); /* reverse gradient on hover */
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}

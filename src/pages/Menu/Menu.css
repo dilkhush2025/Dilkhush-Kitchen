@@ -5,7 +5,7 @@
   position: relative;
 }
 .header-content h1 {
-  color: #fff;
+  color: #FFFF00; /* yellow brand color */
   font-size: 3rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
@@ -21,17 +21,16 @@
   background: #1a1a1a;
   display: flex;
   align-items: center;
-  padding: 2rem 2rem;
-  border-bottom: 2px solid #ffb380;
+  padding: 1.5rem 2rem;
+  border-bottom: 2px solid #FF00A1;
   z-index: 100;
   backdrop-filter: blur(8px);
 }
 @media (min-width: 992px) {
   .menu-topbar {
-    top: 120px; /* adjust to actual navbar height on desktop */
+    top: 120px;
   }
 }
-/* Scrollable Tabs */
 .menu-tabs-wrapper {
   flex: 1;
   overflow-x: auto;
@@ -41,46 +40,49 @@
 .menu-tabs-wrapper::-webkit-scrollbar {
   display: none;
 }
-
 .menu-tabs {
   display: flex;
   gap: 1rem;
   white-space: nowrap;
 }
-
 .tab-btn {
   flex: 0 0 auto;
   background: #2a2a2a;
   border: none;
   padding: 0.6rem 1.5rem;
   border-radius: 1rem;
-  color: #fff;
+  color: #FFFF00;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 .tab-btn:hover {
-  background: #ffb380;
+  background: #FF00A1;
   color: #1a1a1a;
   transform: translateY(-2px);
 }
 .tab-btn.active {
-  background: linear-gradient(90deg, #ff9e67, #ffb380);
+  background: linear-gradient(90deg, #FF00A1, #FFFF00);
   color: #1a1a1a;
-  box-shadow: 0 4px 12px rgba(255,160,100,0.4);
+  box-shadow: 0 4px 12px rgba(255,0,161,0.4);
 }
 
 /* Cart Button */
 .cart-preview {
   flex: 0 0 auto;
   font-weight: 700;
-  background: #ffb380;
+  background: #FFFF00;
   border: none;
   padding: 0.6rem 1.2rem;
   border-radius: 0.75rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(255,160,100,0.3);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  color: #1a1a1a;
+}
+.cart-preview:hover {
+  background: #fff;
+  color: #FF00A1;
 }
 
 /* --- Menu Sections --- */
@@ -93,9 +95,9 @@
 }
 .menu-section-title {
   font-size: 2.2rem;
-  color: #ffb380;
+  color: #FF00A1;
   margin-bottom: 1.5rem;
-  border-bottom: 2px solid #ff9e67;
+  border-bottom: 2px solid #FFFF00;
   padding-bottom: 0.3rem;
 }
 .menu-items {
@@ -106,15 +108,15 @@
 .menu-card {
   display: flex;
   align-items: center;
-  background: linear-gradient(145deg, #1a1a1a, #242424); /* subtle depth */
+  background: linear-gradient(145deg, #1a1a1a, #242424);
   padding: 1rem;
-  border-radius: 0.5rem; /* subtle corner */
+  border-radius: 0.5rem;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 .menu-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(255,160,100,0.3);
+  box-shadow: 0 12px 25px rgba(255,255,0,0.3);
 }
 .item-image {
   width: 130px;
@@ -124,7 +126,7 @@
   margin-right: 1.8rem;
 }
 .item-info h3 {
-  color: #ffb380;
+  color: #FF00A1;
   margin-bottom: 0.4rem;
   font-size: 1.3rem;
   font-weight: 600;
@@ -134,7 +136,7 @@
   margin: 0.3rem 0;
 }
 .item-info .price {
-  color: #ff9e67;
+  color: #FFFF00;
   font-weight: 700;
   font-size: 1.1rem;
 }
@@ -143,7 +145,7 @@
 .btn-add {
   margin-top: 0.6rem;
   padding: 0.55rem 1.2rem;
-  background: #ffb380;
+  background: #FFFF00;
   color: #1a1a1a;
   font-weight: 700;
   border: none;
@@ -153,9 +155,9 @@
 }
 .btn-add:hover {
   background: #fff;
-  color: #ffb380;
+  color: #FF00A1;
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255,160,100,0.3);
+  box-shadow: 0 4px 15px rgba(255,255,0,0.3);
 }
 
 /* --- Floating Cart Button --- */
@@ -163,17 +165,20 @@
   position: fixed;
   bottom: 25px;
   right: 25px;
-  background: #ffb380;
+  background: #FFFF00;
   border: none;
   padding: 14px 20px;
   border-radius: 50px;
   font-weight: bold;
+  color: #1a1a1a;
   box-shadow: 0 6px 20px rgba(0,0,0,0.3);
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
 }
 .floating-cart-btn:hover {
   transform: scale(1.1);
+  background: #fff;
+  color: #FF00A1;
 }
 
 /* --- Cart Sidebar & Overlay --- */
@@ -199,7 +204,7 @@
   z-index: 1051;
   display: flex;
   flex-direction: column;
-  padding: 1.5rem;
+  padding: 1rem 1.5rem 5rem;
   box-shadow: -6px 0 25px rgba(0,0,0,0.4);
   border-radius: 0 0 0 15px;
 }
@@ -210,21 +215,23 @@
   border-bottom: 1px solid #333;
   padding-bottom: 0.5rem;
 }
-.cart-items {
-  flex-grow: 1;
-  margin-top: 1.2rem;
+.cart-content {
+  flex: 1;
   overflow-y: auto;
+  margin-top: 1rem;
 }
+
+/* Cart Items */
 .cart-item {
+  margin-bottom: 0.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 0.6rem;
 }
 .cart-item button {
   margin-left: 0.4rem;
   padding: 0.4rem 0.6rem;
-  background: #ffb380;
+  background: #FFFF00;
   border: none;
   color: #1a1a1a;
   font-weight: 700;
@@ -234,22 +241,12 @@
 }
 .cart-item button:hover {
   background: #fff;
-  color: #ffb380;
+  color: #FF00A1;
 }
-.btn-checkout {
-  margin-top: 1.2rem;
-  padding: 0.85rem;
-  background: #28a745;
-  color: #fff;
-  border: none;
-  font-weight: 700;
-  cursor: pointer;
-  border-radius: 0.75rem;
-  transition: all 0.3s ease;
-}
-.btn-checkout:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+/* Cart Summary */
+.cart-summary {
+  margin-top: 1rem;
 }
 
 /* --- Customer Details Section --- */
@@ -257,19 +254,17 @@
   margin-top: 1.5rem;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
-  color: #ffb380;
+  color: #FF00A1;
   font-weight: 600;
   border-bottom: 1px solid #333;
   padding-bottom: 0.3rem;
 }
-
 .cart-details {
-  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+  margin-top: 0.5rem;
 }
-
 .cart-input {
   width: 100%;
   padding: 0.7rem 1rem;
@@ -281,27 +276,42 @@
   font-family: 'Poppins', sans-serif;
   transition: all 0.3s ease;
 }
-
 .cart-input::placeholder {
   color: #aaa;
 }
-
 .cart-input:focus {
   outline: none;
-  border-color: #ffb380;
+  border-color: #FFFF00;
   background: #2a2a2a;
-  box-shadow: 0 0 8px rgba(255,160,100,0.4);
+  box-shadow: 0 0 8px rgba(255,255,0,0.4);
 }
-
-/* Match select with dark style */
 select.cart-input {
   appearance: none;
   background: #242424;
   color: #fff;
   cursor: pointer;
 }
-
-/* Make time input consistent */
 input[type="time"].cart-input {
   color-scheme: dark;
+}
+
+/* --- Fixed Checkout Button --- */
+.btn-checkout-fixed {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  right: 1.5rem;
+  padding: 0.85rem;
+  background: #FFFF00;
+  color: #1a1a1a;
+  border: none;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+.btn-checkout-fixed:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255,255,0,0.3);
 }
