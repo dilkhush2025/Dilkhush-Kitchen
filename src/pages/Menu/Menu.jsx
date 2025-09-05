@@ -81,7 +81,7 @@ Total: £${total.toFixed(2)}
 --- Customer Details ---
 Name: ${customerName || "N/A"}
 Email: ${customerEmail || "N/A"}
-Allergies: ${allergies || "None"}
+Allergies/Dietary: ${allergies || "None"}
 Delivery Option: ${deliveryType}
 Preferred Time: ${preferredTime || "Not specified"}
 ${deliveryType === "Delivery" ? `Address: ${address1}, ${address2}, ${postcode}` : ""}
@@ -157,7 +157,6 @@ ${deliveryType === "Delivery" ? `Address: ${address1}, ${address2}, ${postcode}`
         </div>
 
         <div className="cart-content">
-          {/* Cart Items */}
           {cart.length === 0 ? <p>Your cart is empty.</p> : cart.map(item => {
             const price = parseFloat(item.price.replace(/[^0-9.-]+/g, ""));
             const itemTotal = (price * item.quantity).toFixed(2);
@@ -175,7 +174,6 @@ ${deliveryType === "Delivery" ? `Address: ${address1}, ${address2}, ${postcode}`
             );
           })}
 
-          {/* Total */}
           {cart.length > 0 && (
             <div className="cart-summary">
               <h4>Order Summary</h4>
@@ -188,11 +186,16 @@ ${deliveryType === "Delivery" ? `Address: ${address1}, ${address2}, ${postcode}`
           <div className="cart-details">
             <input type="text" placeholder="Your Name" value={customerName} onChange={e => setCustomerName(e.target.value)} className="cart-input"/>
             <input type="email" placeholder="Your Email" value={customerEmail} onChange={e => setCustomerEmail(e.target.value)} className="cart-input"/>
-            <input type="text" placeholder="Any allergies?" value={allergies} onChange={e => setAllergies(e.target.value)} className="cart-input"/>
+            
+            {/* Allergies / Dietary */}
+            <label className="cart-allergies-label">Allergies / Dietary Restrictions</label>
+            <input type="text" placeholder="E.g., Nuts, Gluten, Dairy" value={allergies} onChange={e => setAllergies(e.target.value)} className="cart-input"/>
+
             <select value={deliveryType} onChange={e => setDeliveryType(e.target.value)} className="cart-input">
               <option value="Collection">Collection</option>
               <option value="Delivery">Delivery</option>
             </select>
+
             {deliveryType === "Delivery" && (
               <>
                 <input type="text" placeholder="Address Line 1" value={address1} onChange={e => setAddress1(e.target.value)} className="cart-input"/>
@@ -200,8 +203,8 @@ ${deliveryType === "Delivery" ? `Address: ${address1}, ${address2}, ${postcode}`
                 <input type="text" placeholder="Postcode" value={postcode} onChange={e => setPostcode(e.target.value)} className="cart-input"/>
               </>
             )}
-            {/* Dynamic Time Label */}
-            <label style={{ color: '#ffb380', fontWeight: '600' }}>
+
+            <label style={{ color: '#FFB380', fontWeight: '600' }}>
               {deliveryType === "Delivery" ? "Preferred Delivery Time" : "Preferred Collection Time"}
             </label>
             <input type="time" value={preferredTime} onChange={e => setPreferredTime(e.target.value)} className="cart-input"/>
