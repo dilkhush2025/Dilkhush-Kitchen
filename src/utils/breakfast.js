@@ -6,8 +6,7 @@ const breakfast = [
     name: "Khaman",
     description:
       "Popular snack from Gujarat (Western India), steamed Savory cake made from fermented batter of chickpea flour, lightly spiced with chilli/ginger/garlic paste and tempered with mustard seeds. Served with Besan (gram flour) chutney",
-    price: "£4.90",
-    image: khamanImg
+    price: "£4.90"
   },
   {
     id: 2,

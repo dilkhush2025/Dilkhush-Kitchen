@@ -2,7 +2,7 @@ import React from 'react';
 import './About.css';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import AboutChef1Img from '../../utils/images/about-chef1-img.jpg';
+import AboutChef1Img from '../../utils/images/Dil Khush Logo_1_Square.png';
 import ImageGallery from '../../components/ImageGallery/ImageGallery';
 import Reviews from '../../components/Reviews/Reviews';
 

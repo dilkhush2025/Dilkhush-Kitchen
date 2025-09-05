@@ -7,16 +7,16 @@ import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
-import ImageGallery1 from '../../utils/images/gallery1.jpg';
-import ImageGallery2 from '../../utils/images/gallery2.jpg';
-import ImageGallery3 from '../../utils/images/gallery3.jpg';
-import ImageGallery4 from '../../utils/images/gallery4.jpg';
-import ImageGallery5 from '../../utils/images/gallery5.jpg';
-import ImageGallery6 from '../../utils/images/gallery6.jpg';
-import ImageGallery7 from '../../utils/images/gallery7.jpg';
-import ImageGallery8 from '../../utils/images/gallery8.jpg';
-import ImageGallery9 from '../../utils/images/gallery9.jpg';
-import ImageGallery10 from '../../utils/images/gallery10.jpg';
+import ImageGallery1 from '../../utils/images/PHOTO-2025-08-31-15-41-07 (1).jpg';
+import ImageGallery2 from '../../utils/images/PHOTO-2025-08-31-15-41-07 (2).jpg';
+import ImageGallery3 from '../../utils/images/PHOTO-2025-08-31-15-41-07 (3).jpg';
+import ImageGallery4 from '../../utils/images/PHOTO-2025-08-31-15-41-07.jpg';
+import ImageGallery5 from '../../utils/images/PHOTO-2025-08-31-15-41-08 (1).jpg';
+import ImageGallery6 from '../../utils/images/PHOTO-2025-08-31-15-41-08 (2).jpg';
+import ImageGallery7 from '../../utils/images/PHOTO-2025-08-31-15-41-08 (3).jpg';
+import ImageGallery8 from '../../utils/images/PHOTO-2025-08-31-15-41-08.jpg';
+import ImageGallery9 from '../../utils/images/PHOTO-2025-08-31-15-41-09 (1).jpg';
+import ImageGallery10 from '../../utils/images/PHOTO-2025-08-31-15-41-09 (2).jpg';
 
 export default function ImageGallery() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);

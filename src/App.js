@@ -8,6 +8,8 @@ import Home from './pages/Home/Home';
 import Menu from './pages/Menu/Menu';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import OrderNow from './pages/OrderNow/OrderNow';
+import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer/Footer';
 import { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
@@ -41,9 +43,9 @@ function App() {
         <Container>
           {/* Logo */}
           <Navbar.Brand as={Link} to="/" className="d-flex align-items-center" onClick={handleNavClick}>
-  <img src={logo} alt="Dil Khush Kitchen" className="navbar-logo me-2" />
-  <span className="fw-bold brand-text">Dil Khush Kitchen</span>
-</Navbar.Brand>
+            <img src={logo} alt="Dil Khush Kitchen" className="navbar-logo me-2" />
+            <span className="fw-bold brand-text">Dil Khush Kitchen</span>
+          </Navbar.Brand>
 
           {/* Hamburger toggle */}
           <Navbar.Toggle aria-controls="basic-navbar-nav" aria-expanded={expanded} />
@@ -65,7 +67,7 @@ function App() {
               ))}
 
               {/* Order Now button */}
-              <Link to="/contact" onClick={handleNavClick} className="mt-2 mt-lg-0">
+              <Link to="/order" onClick={handleNavClick} className="mt-2 mt-lg-0">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -79,12 +81,16 @@ function App() {
         </Container>
       </Navbar>
 
+      {/* Scroll to top on route change */}
+      <ScrollToTop />
+
       {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/order" element={<OrderNow />} />
       </Routes>
 
       {/* Footer */}

@@ -1,0 +1,81 @@
+/* src/pages/OrderNow/OrderNow.css */
+
+.order-now-page {
+  background: #111;
+  color: #eee;
+  min-height: 100vh;
+  padding-top: 120px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header Banner */
+.order-now-header {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+              url('../../utils/images/menu-section-img.jpg') center/cover no-repeat;
+  padding: 6rem 2rem;
+  margin-bottom: 2rem;
+}
+.order-now-header h1 {
+  color: #FFFF00;
+  font-size: 2.8rem;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* Content */
+.order-now-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+.order-now-content span {
+  color: #FF55A1;
+  font-weight: 600;
+}
+.order-now-content p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Steps */
+.order-steps {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+  text-align: left;
+}
+.order-steps li {
+  background: #1a1a1a;
+  margin-bottom: 1rem;
+  padding: 1rem 1.2rem;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  border-left: 4px solid #FF55A1;
+  transition: all 0.3s ease;
+}
+.order-steps li:hover {
+  background: #222;
+  transform: translateX(5px);
+}
+
+/* CTA Button */
+.cta-section {
+  margin-top: 2.5rem;
+}
+.btn-order-start {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: linear-gradient(135deg, #FFDD55, #FF7F50, #FF55A1);
+  color: #1a1a1a;
+  font-weight: 700;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+.btn-order-start:hover {
+  background: #fff;
+  color: #FF55A1;
+  transform: translateY(-3px);
+}
