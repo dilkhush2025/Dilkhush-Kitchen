@@ -1,4 +1,4 @@
-import khamanImg from ".//images/khaman.jpg";
+
 
 const breakfast = [
   {
