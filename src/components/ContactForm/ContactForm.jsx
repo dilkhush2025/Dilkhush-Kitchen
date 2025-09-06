@@ -8,118 +8,122 @@ import InvalidFeedback from './InvalidFeedback';
 import { motion } from 'framer-motion';
 
 function ContactForm() {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
-    const [emailAddress, setEmailAddress] = useState('');
-    const [date, setDate] = useState('');
-    const [numberOfGuests, setNumberOfGuests] = useState('');
-    const [comments, setComments] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [emailAddress, setEmailAddress] = useState('');
+  const [date, setDate] = useState('');
+  const [comments, setComments] = useState('');
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    event.preventDefault();
+    event.stopPropagation();
+
+    if (form.checkValidity() === false) {
+      setValidated(true);
+      return;
+    }
+
+    // WhatsApp message
+    const text = `
+⭐ *New Feedback / Special Request*  
+----------------------------------  
+👤 Name: ${firstName} ${lastName}  
+📞 Phone: ${phoneNumber}  
+✉️ Email: ${emailAddress}  
+📆 Date: ${date || "N/A"}  
+💬 Message: ${comments || "N/A"}  
+    `;
+    const phone = "447877595717";
+    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
+
+    // Optional modal
     const results = document.getElementById('results');
-    const [validated, setValidated] = useState(false);
+    results.innerHTML = `
+      <div class="modal" id="modal">
+        <div class="modal-dialog d-flex align-items-center">
+          <div class="modal-content rounded-0">
+            <div class="modal-header">
+              <h5 class="modal-title">Thank You!</h5>
+            </div>
+            <div class="modal-body">
+              <p>Dear ${firstName},</p>
+              <p>Your feedback/special request has been received. We will get back to you shortly via WhatsApp or email.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success btn-lg rounded-0" data-bs-dismiss="modal" onClick="window.location.reload()">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
 
-    const handleSubmit = (event) => {
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-        
-        } else {
-            event.preventDefault();
-            event.stopPropagation();
+    document.getElementById('contact-page').classList.add('scrolling-stop');
+    document.getElementById('footer').style.display = 'none';
 
-            results.innerHTML = `
-                <div class="modal" id="modal">
-                    <div class="modal-dialog d-flex align-items-center">
-                        <div class="modal-content rounded-0">
-                            <div class="modal-header">
-                                <h5 class="modal-title">Thank You!</h5>
-                            </div>
-                            <div class="modal-body">
-                                <p>Dear ${firstName} ${lastName},</p>
-                                <p>Thank you for your reservation for ${numberOfGuests} people on date of ${date}. You will receive a confirmation email shortly on ${emailAddress}.</p>
-                                <p>See you soon!</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-success btn-lg rounded-0" data-bs-dismiss="modal" onClick="window.location.reload()">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            `;
+    setValidated(true);
+  };
 
-            document.getElementById('contact-page').classList.add('scrolling-stop');
-            document.getElementById('footer').style.display = 'none';
-        }
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 350 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1 }}
+    >
+      {/* Heading */}
+      <h2 className="feedback-heading text-center mb-4">Feedback / Special Request Form</h2>
 
-        setValidated(true);
-    };
+      <Form noValidate validated={validated} className="feedback-form p-5 rounded" id="form" onSubmit={handleSubmit}>
+        <Form.Group className="row mb-3">
+          <Col md={6}>
+            <Form.Label htmlFor="first-name">First Name</Form.Label>
+            <Form.Control type="text" id="first-name" value={firstName} onChange={e => setFirstName(e.target.value)} required />
+            <ValidFeedback />
+            <InvalidFeedback message="Please enter your first name." />
+          </Col>
+          <Col md={6}>
+            <Form.Label htmlFor="last-name">Last Name</Form.Label>
+            <Form.Control type="text" id="last-name" value={lastName} onChange={e => setLastName(e.target.value)} required />
+            <ValidFeedback />
+            <InvalidFeedback message="Please enter your last name." />
+          </Col>
+        </Form.Group>
 
-    return (
-        <motion.div
-            initial={{ opacity: 0, x: 350 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-        >
-            <Form noValidate validated={validated} className="bg-dark text-light p-5 needs-validation" id="form" onSubmit={handleSubmit}>
-                <Form.Group className="row mb-3">
-                    <Col className="mb-3 mb-md-0" md={6}>
-                        <Form.Label htmlFor="first-name" className="text-capitalize">First name</Form.Label>
-                        <Form.Control className='rounded-0' type="text" name="first-name" id="first-name" value={firstName} onChange={(event) => setFirstName(event.target.value)} required />
-                        <ValidFeedback />
-                        <InvalidFeedback message='Please enter your first name.' />
-                    </Col>
-                    <Col md={6}>
-                        <Form.Label htmlFor="last-name" className="text-capitalize">Last name</Form.Label>
-                        <Form.Control className='rounded-0' type="text" name="last-name" id="last-name" value={lastName} onChange={(event) => setLastName(event.target.value)}required />
-                        <ValidFeedback />
-                        <InvalidFeedback message='Please enter your last name.' />
-                    </Col>
-                </Form.Group>
+        <Form.Group className="row mb-3">
+          <Col md={6}>
+            <Form.Label htmlFor="phone-number">Phone Number</Form.Label>
+            <Form.Control type="tel" id="phone-number" pattern="[0-9]{5}[0-9]{6}" value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)} required />
+            <ValidFeedback />
+            <InvalidFeedback message="Please enter your mobile number." />
+          </Col>
+          <Col md={6}>
+            <Form.Label htmlFor="email">Email Address</Form.Label>
+            <Form.Control type="email" id="email" value={emailAddress} onChange={e => setEmailAddress(e.target.value)} required />
+            <ValidFeedback />
+            <InvalidFeedback message="Please enter your email address." />
+          </Col>
+        </Form.Group>
 
-                <Form.Group className="row mb-3">
-                    <Col className="mb-3 mb-md-0" md={6}>
-                        <Form.Label htmlFor="phone-number" className="text-capitalize">Phone number</Form.Label>
-                        <Form.Control className='rounded-0' type="tel" pattern="[0-9]{5}[0-9]{6}" name="phone-number" id="phone-number" value={phoneNumber} onChange={(event) => setPhoneNumber(event.target.value)} required />
-                        <ValidFeedback />
-                        <InvalidFeedback message='Please enter your mobile number.' />
-                    </Col>
-                    <Col md={6}>
-                        <Form.Label htmlFor="email" className="text-capitalize">Email address</Form.Label>
-                        <Form.Control className='rounded-0' type="email" name="email" id="email" value={emailAddress} onChange={(event) => setEmailAddress(event.target.value)} required />
-                        <ValidFeedback />
-                        <InvalidFeedback message='Please enter your email address.' />
-                    </Col>
-                </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label htmlFor="date">Date (optional)</Form.Label>
+          <Form.Control type="date" id="date" value={date} onChange={e => setDate(e.target.value)} />
+          <ValidFeedback />
+        </Form.Group>
 
-                <Form.Group className="row mb-3">
-                    <Col className="mb-3 mb-md-0" md={6}>
-                        <Form.Label htmlFor="date">Date</Form.Label>
-                        <Form.Control className='rounded-0' type="date" name="date" id="date" value={date} onChange={(event) => setDate(event.target.value)}required />
-                        <ValidFeedback />
-                        <InvalidFeedback message='Please choose a date.' />
-                    </Col>
-                    <Col md={6}>
-                        <Form.Label htmlFor="guests" className="text-capitalize">Number of guests</Form.Label>
-                        <Form.Control className='rounded-0' type="number" name="guests" id="guests" value={numberOfGuests} onChange={(event) => setNumberOfGuests(event.target.value)} required />
-                        <ValidFeedback />
-                        <InvalidFeedback message='Please choose the number of guests.' />
-                    </Col>
-                </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label htmlFor="comments">Your Message</Form.Label>
+          <Form.Control as="textarea" rows={4} id="comments" value={comments} onChange={e => setComments(e.target.value)} required />
+          <InvalidFeedback message="Please enter your message." />
+        </Form.Group>
 
-                <Form.Group className="mb-3">
-                    <Form.Label htmlFor="comments">Comments</Form.Label>
-                    <Form.Control className='rounded-0' as="textarea" name="comments" cols={20} rows={3} id="comments" value={comments} onChange={(event) => setComments(event.target.value)} />
-                </Form.Group>
+        <Button type="submit" className="btn-submit btn-lg mt-4">Submit</Button>
+      </Form>
 
-                <Button variant="success" type="submit" className='btn btn-lg rounded-0 mt-4' id="submit-btn">
-                    Submit
-                </Button>
-            </Form>
-
-            <div id="results"></div>
-        </motion.div>
-    )
+      <div id="results"></div>
+    </motion.div>
+  );
 }
 
 export default ContactForm;

@@ -3,3 +3,9 @@
     background-size: cover;
     background-position: center;
 }
+
+.contact-img {
+  max-width: 100%; /* scale down if container is smaller */
+  height: 100%;    /* maintain aspect ratio */
+  display: block;  /* optional: removes inline spacing */
+}
