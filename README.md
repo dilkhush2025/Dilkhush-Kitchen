@@ -1,7 +1,7 @@
 # Dilkhush Kitchen
 
 ## Description
-A responsive, multi-page restaurant website created with [React JS](https://react.dev/) and [Bootstrap 5](https://getbootstrap.com/). It includes four main pages—Home, Menu, About, and Contact—plus a collection of six interactive components like image galleries, review displays, and a contact form. Built with scalability in mind, this project highlights modular design principles and is well-suited for restaurant startups and small businesses.
+A responsive, multi-page restaurant website created with [React JS](https://react.dev/) and [Bootstrap 5](https://getbootstrap.com/). 
 
 
 ## Technologies Used
