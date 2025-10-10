@@ -123,6 +123,25 @@
   font-size: 1.1rem;
 }
 
+/* --- Add-to-Cart Button --- */
+.btn-add {
+  margin-top: 0.6rem;
+  padding: 0.55rem 1.2rem;
+  background: linear-gradient(135deg, #FFDD55, #FF7F50, #FF55A1);
+  color: #1a1a1a;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.75rem;
+  transition: all 0.3s ease;
+}
+.btn-add:hover {
+  background: #fff;
+  color: #FF55A1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(255,221,85,0.3);
+}
+
 /* --- Floating Cart Button --- */
 .floating-cart-btn {
   position: fixed;
