@@ -175,11 +175,6 @@ Payment: ${paymentMethod}
         </div>
       </div>
 
-      {/* Floating Cart */}
-      <button className="floating-cart-btn" onClick={() => setCartOpen(true)}>
-        Cart ({cart.reduce((acc, i) => acc + i.quantity, 0)})
-      </button>
-
       {/* Cart Sidebar */}
       {cartOpen && <div className="cart-overlay" onClick={() => setCartOpen(false)} />}
       <motion.div className="cart-sidebar"
