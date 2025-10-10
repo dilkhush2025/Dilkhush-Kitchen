@@ -123,23 +123,26 @@
   font-size: 1.1rem;
 }
 
-/* --- Add-to-Cart Button --- */
-.btn-add {
-  margin-top: 0.6rem;
-  padding: 0.55rem 1.2rem;
-  background: linear-gradient(135deg, #FFDD55, #FF7F50, #FF55A1);
-  color: #1a1a1a;
-  font-weight: 700;
+/* --- Floating Cart Button --- */
+.floating-cart-btn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #FFDD55;
   border: none;
+  padding: 14px 20px;
+  border-radius: 50px;
+  font-weight: bold;
+  color: #1a1a1a;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
   cursor: pointer;
-  border-radius: 0.75rem;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+  z-index: 200;
 }
-.btn-add:hover {
+.floating-cart-btn:hover {
+  transform: scale(1.1);
   background: #fff;
   color: #FF55A1;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(255,221,85,0.3);
 }
 
 /* --- Cart Sidebar & Overlay --- */
