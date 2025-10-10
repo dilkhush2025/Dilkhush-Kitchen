@@ -25,7 +25,7 @@ function ContactInfo() {
       <div className="mb-5 w-100" style={{ maxWidth: "600px", height: "300px" }}>
         <iframe
           title="Estcourt Road Map"
-          src="https://maps.app.goo.gl/xkfTtp45QwnudZC86https://www.google.com/maps/place/52+Estcourt+Rd,+Gloucester+GL1+3LG/@51.8752948,-2.2390429,17z/data=!3m1!4b1!4m6!3m5!1s0x487106802607c49f:0xc7540aa9d35c8577!8m2!3d51.8752948!4d-2.236468!16s%2Fg%2F11c4xw9x2x?entry=ttu&g_ep=EgoyMDI1MTAwOC4wIKXMDSoASAFQAw%3D%3D"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2463.214620101649!2d-2.236468!3d51.8752948!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487106802607c49f%3A0xc7540aa9d35c8577!2s52%20Estcourt%20Rd%2C%20Gloucester%20GL1%203LG!5e0!3m2!1sen!2suk!4v1760131268306!5m2!1sen!2suk"
           width="100%"
           height="100%"
           style={{ border: 0, borderRadius: "1rem" }}
