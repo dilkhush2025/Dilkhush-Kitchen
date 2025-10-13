@@ -84,19 +84,33 @@ function Menu() {
   const total = cart.reduce((sum, i) => sum + parseFloat(i.price.replace(/[^0-9.-]+/g, "")) * i.quantity, 0);
 
   const checkout = () => {
-    if (!cart.length) return alert('Cart is empty!');
-    if (!firstName || !lastName) return alert('Please enter your full name.');
-    if (!phoneNumber) return alert('Please enter your phone number.');
-    if (!allergies) return alert('Please specify allergies (or type "None").');
-    if (!deliveryType) return alert('Please select Collection or Delivery.');
-    if (!paymentMethod) return alert('Please select a payment method.');
+  if (!cart.length) return alert('Cart is empty!');
+  if (!firstName || !lastName) return alert('Please enter your full name.');
+  if (!phoneNumber) return alert('Please enter your phone number.');
+  if (!allergies) return alert('Please specify allergies (or type "None").');
+  if (!deliveryType) return alert('Please select Collection or Delivery.');
+  if (!paymentMethod) return alert('Please select a payment method.');
 
-    const itemsList = cart.map(i => {
-      const price = parseFloat(i.price.replace(/[^0-9.-]+/g, ""));
-      return `• ${i.name} x${i.quantity} — £${(price * i.quantity).toFixed(2)}`;
-    }).join("\n");
+  // === Date restriction check ===
+  const today = new Date();
+  const restrictedStart = new Date('2025-10-13');
+  const restrictedEnd = new Date('2025-10-16');
 
-    const text = `
+  // Normalize times to avoid edge cases
+  restrictedStart.setHours(0, 0, 0, 0);
+  restrictedEnd.setHours(23, 59, 59, 999);
+
+  if (deliveryType === "Delivery" && today >= restrictedStart && today <= restrictedEnd) {
+    alert("🚫 Sorry, delivery is not available between 13 October 2025 and 16 October 2025. Please select 'Collection' instead.");
+    return;
+  }
+
+  const itemsList = cart.map(i => {
+    const price = parseFloat(i.price.replace(/[^0-9.-]+/g, ""));
+    return `• ${i.name} x${i.quantity} — £${(price * i.quantity).toFixed(2)}`;
+  }).join("\n");
+
+  const text = `
 📦 *Order Details*:
 ${itemsList}
 -------------------
@@ -113,11 +127,11 @@ ${deliveryType === "Delivery" ? `Address: ${address1}, ${address2}, ${postcode}`
 Payment: ${paymentMethod}
 
 🔒 Your personal data will be used to process your order and may be used for other purposes, including promotional campaigns and announcements.
-    `;
+  `;
 
-    const phone = "447877595717";
-    window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
-  };
+  const phone = "447877595717";
+  window.open(`https://wa.me/${phone}?text=${encodeURIComponent(text)}`, "_blank");
+};
 
   const currentSection = menuSections[activeSection];
 
