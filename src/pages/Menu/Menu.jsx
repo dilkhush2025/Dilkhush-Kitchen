@@ -12,6 +12,7 @@ import sides from '../../utils/sides';
 import desserts from '../../utils/desserts';
 import coldDrinks from '../../utils/colddrinks';
 import hotDrinks from '../../utils/hotdrinks';
+import combos from '../../utils/combos'
 
 function Menu() {
   const menuSections = [
@@ -24,6 +25,7 @@ function Menu() {
     { title: 'Desserts', items: desserts },
     { title: 'Hot Drinks', items: hotDrinks },
     { title: 'Cold Drinks', items: coldDrinks },
+    { title: 'Combos', items: combos },
   ];
 
   const [activeSection, setActiveSection] = useState(0);
