@@ -1,106 +1,114 @@
 
 
 const breakfast = [
-  {
+  
+    {
     id: 1,
+    name: "Veg Pettis",
+    description:
+      "Crispy golden brown, deep fried potato pastry, made of mashed potato, gram flour freshly grated coconut, peas, cashew nuts and raisins, garnished with fresh coriander and fennel seeds, served with coriander-mint yoghurt chutney",
+    price: "£4.95"
+  },
+  {
+    id: 2,
     name: "Khaman",
     description:
       "Popular snack from Gujarat (Western India), steamed Savory cake made from fermented batter of chickpea flour, lightly spiced with chilli/ginger/garlic paste and tempered with mustard seeds. Served with Besan (gram flour) chutney",
     price: "£4.90"
   },
   {
-    id: 2,
+    id: 3,
     name: "Dhokla",
     description:
       "Popular snack from Gujarat (Western India), steamed Savory cake made from fermented batter of rice flour, toppled with red chilli powder and tempered with mustard seeds. Served with coriander and mint chutney",
     price: "£4.90"
   },
   {
-    id: 3,
+    id: 4,
     name: "Patra",
     description:
       "Colocasia leaves (taro leaves) coated with a flavourful chickpea flour batter, steamed, and then tempered with spices",
     price: "£3.90"
   },
   {
-    id: 4,
+    id: 5,
     name: "Methi Bhaji",
     description:
       "Popular Indian fritters - fenugreek leaves mixed in a spiced chickpea flour batter then deep fried for soft but crispy finish. Served with blended Sweet-Tangy & Coriander-mint Chutney",
     price: "£4.95"
   },
   {
-    id: 5,
+    id: 6,
     name: "Potato Bhaji",
     description:
       "Popular Indian fritters - thin sliced potatoes mixed in a spiced chickpea flour batter then deep fried for soft but crispy finish. Served with blended Sweet-Tangy & Coriander-mint Chutney",
     price: "£4.65"
   },
   {
-    id: 6,
+    id: 7,
     name: "Onion Bhaji",
     description:
       "Popular Indian fritters - thin sliced onions mixed in a spiced chickpea flour batter then deep fried for soft but crispy finish. Served with blended Sweet-Tangy & Coriander-mint Chutney",
     price: "£4.65"
   },
   {
-    id: 7,
+    id: 8,
     name: "Mix Bhaji",
     description:
       "Combination of Methi/Potato/Onion bhaji. Served with blended Sweet-Tangy & Coriander-mint Chutney",
     price: "£4.75"
   },
   {
-    id: 8,
+    id: 9,
     name: "Bread Pakoda (Bhaji)",
     description:
       "Slices of bread, stuffed with spiced potato mixture and coated in a gram flour batter - deep fried until golden and crispy",
     price: "£3.50"
   },
   {
-    id: 9,
+    id: 10,
     name: "Vada Pau",
     description:
       "Most popular street food from Mumbai - spicy potato fritter (vada) nestled inside a soft bread roll (pav) with spicy chutneys. Served with fried green chili",
     price: "£3.85"
   },
   {
-    id: 10,
+    id: 11,
     name: "Dabeli",
     description:
       "Dilkhush Special - spicy and sweet potato filling nestled inside a soft bread roll (pav) with sweet-tangy chutney, pomegranate seeds and Sev (crispy chickpea flour noodles) and peanuts",
     price: "£3.85"
   },
   {
-    id: 11,
+    id: 12,
     name: "Pani Puri",
     description:
       "Mouth-watering Indian street food - Crispy puri cells filled with Savory mix of chickpeas, potatoes and spices and toppled with a tangy and flavourful tamarind-coriander water.",
     price: "£4.25"
   },
   {
-    id: 12,
+    id: 13,
     name: "Bhel Puri",
     description:
       "Delightful mix of textures and flavours of puffed rice, corn flakes, crunch of Sev (crispy chickpea flour noodles) and other fried snacks together with softness of potatoes, onions and tomatoes - mixed with sweet-tangy chutney and chaat masala",
     price: "£5.25"
   },
   {
-    id: 13,
+    id: 14,
     name: "Dahi Puri",
     description:
       "Crispy puri shells filled with delicious combination of mashed potatoes, chickpeas, sweet-tangy chutney and creamy yogurt and garnished with Sev and fresh coriander",
     price: "£4.95"
   },
   {
-    id: 14,
+    id: 15,
     name: "Sev Puri",
     description:
       "Popular Indian street food - crispy puri cells toppled with mashed potatoes, chickpeas, sweet-tangy chutney and garnished with Sev, pomegranate seeds and Sev crispy chickpea flour noodles",
     price: "£4.95"
   },
   {
-    id: 15,
+    id: 16,
     name: "Alu Puri / Puri Bhaji",
     description:
       "Deep-fried puffed bread (Puri) - served with a vibrant and aromatic potato curry (bhaji)",
