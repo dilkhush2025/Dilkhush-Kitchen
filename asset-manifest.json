@@ -1,0 +1,36 @@
+{
+  "files": {
+    "main.css": "/static/css/main.be1b615a.css",
+    "main.js": "/static/js/main.a35c7c64.js",
+    "static/js/787.a25f1f37.chunk.js": "/static/js/787.a25f1f37.chunk.js",
+    "static/media/home-header-img.jpg": "/static/media/home-header-img.21faa46443547d1b464d.jpg",
+    "static/media/menu-section-img.jpg": "/static/media/menu-section-img.3aaacc0dcb9f62d15929.jpg",
+    "static/media/about-page-header-img.jpg": "/static/media/about-page-header-img.89a29e13303c1c44d2dc.jpg",
+    "static/media/contact-section-background-img.jpg": "/static/media/contact-section-background-img.5bd21aad563b3a65aa6c.jpg",
+    "static/media/PHOTO-2025-08-31-15-41-07 (3).jpg": "/static/media/PHOTO-2025-08-31-15-41-07 (3).87cca42b7d6aaecac1a1.jpg",
+    "static/media/PHOTO-2025-08-31-15-41-07 (2).jpg": "/static/media/PHOTO-2025-08-31-15-41-07 (2).81934bb25ece90a5b1c9.jpg",
+    "static/media/PHOTO-2025-08-31-15-41-08.jpg": "/static/media/PHOTO-2025-08-31-15-41-08.941dc6384d8f4c425da5.jpg",
+    "static/media/PHOTO-2025-08-31-15-41-08 (1).jpg": "/static/media/PHOTO-2025-08-31-15-41-08 (1).b6579baea5a5c3501f50.jpg",
+    "static/media/PHOTO-2025-08-31-15-41-07.jpg": "/static/media/PHOTO-2025-08-31-15-41-07.b53b3d3c736f5d68dc5e.jpg",
+    "static/media/PHOTO-2025-08-31-15-41-09 (2).jpg": "/static/media/PHOTO-2025-08-31-15-41-09 (2).52a02f86f27a2c2ef2e5.jpg",
+    "static/media/PHOTO-2025-08-31-15-41-07 (1).jpg": "/static/media/PHOTO-2025-08-31-15-41-07 (1).0bc20920d544b7b1eacb.jpg",
+    "static/media/popup-image.jpg": "/static/media/popup-image.c3addaadc9f2a0fbe33f.jpg",
+    "static/media/PHOTO-2025-08-31-15-41-08 (3).jpg": "/static/media/PHOTO-2025-08-31-15-41-08 (3).09833feb3f5f5be903fd.jpg",
+    "static/media/PHOTO-2025-08-31-15-41-08 (2).jpg": "/static/media/PHOTO-2025-08-31-15-41-08 (2).9904544ae1d68ff65de9.jpg",
+    "static/media/PHOTO-2025-08-31-15-41-09 (1).jpg": "/static/media/PHOTO-2025-08-31-15-41-09 (1).0acc50533dacf72923c3.jpg",
+    "static/media/gallery13.jpg": "/static/media/gallery13.2ec2262290102363f785.jpg",
+    "static/media/logo.png": "/static/media/logo.5570e6b2393d2319e62b.png",
+    "static/media/Dil Khush Logo_1_Square.png": "/static/media/Dil Khush Logo_1_Square.d9f4cef627448a7e4697.png",
+    "static/media/about-section-img.jpg": "/static/media/about-section-img.d9f4cef627448a7e4697.jpg",
+    "static/media/gallery12.jpg": "/static/media/gallery12.fb6818fd5cce60425c80.jpg",
+    "static/media/akash.png": "/static/media/akash.794b0a71850504ab404b.png",
+    "index.html": "/index.html",
+    "main.be1b615a.css.map": "/static/css/main.be1b615a.css.map",
+    "main.a35c7c64.js.map": "/static/js/main.a35c7c64.js.map",
+    "787.a25f1f37.chunk.js.map": "/static/js/787.a25f1f37.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.be1b615a.css",
+    "static/js/main.a35c7c64.js"
+  ]
+}
