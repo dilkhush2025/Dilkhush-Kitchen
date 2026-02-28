@@ -70,7 +70,7 @@ const breakfast = [
     name: "Vada Pau",
     description:
       "Most popular street food from Mumbai - spicy potato fritter (vada) nestled inside a soft bread roll (pav) with spicy chutneys. Served with fried green chili",
-    price: "£3.85"
+    price: "£1.99"
   },
   {
     id: 11,
