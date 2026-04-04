@@ -11,14 +11,14 @@ function Home() {
   const [showPopup, setShowPopup] = useState(false);
 
   // 🔹 ADD: show popup on page load
-  useEffect(() => {
-    setShowPopup(true);
-  }, []);
+  // useEffect(() => {
+  //   setShowPopup(true);
+  // }, []);
 
   return (
     <div className='home-page'>
       {/* 🔹 ADD: Popup Image */}
-        {showPopup && (
+        {/* {showPopup && (
           <div className="popup-overlay">
             <div className="popup-content">
               <button
@@ -34,7 +34,7 @@ function Home() {
               />
             </div>
           </div>
-        )}
+        )} */}
 
         {/* ✅ EXISTING CODE (unchanged) */}
 
