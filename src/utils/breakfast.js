@@ -70,7 +70,7 @@ const breakfast = [
     name: "Vada Pau",
     description:
       "Most popular street food from Mumbai - spicy potato fritter (vada) nestled inside a soft bread roll (pav) with spicy chutneys. Served with fried green chili",
-    price: "£1.99"
+    price: "£3.85"
   },
   {
     id: 11,
@@ -171,20 +171,6 @@ const breakfast = [
     price: "£4.95"
   },
   {
-    id: 24,
-    name: "Uthappam",
-    description:
-      "A famous south-Indian Savory pancake, made from fermented rice and lentil batter and toppled with vegetables (onions, tomatoes and chillies)",
-    price: "£5.95"
-  },
-  {
-    id: 25,
-    name: "Idli Sambhar",
-    description:
-      "Beloved south-Indian dish - featuring soft-fluffy steamed rice cakes (idly) - 4 pcs. Served with a flavourful lentil-based vegetable stew (sambhar), Coconut Chutney and Tomato Chutney",
-    price: "£4.95"
-  },
-  {
     id: 26,
     name: "Chicken Tawa Fry",
     description:
@@ -232,13 +218,6 @@ const breakfast = [
     description:
       "Seasoned ground chicken and infused with fresh herbs then shaped around the skewers and cooked until tender and slightly charred",
     price: "£7.60"
-  },
-  {
-    id: 33,
-    name: "Chicken Malai Tikka",
-    description:
-      "Boneless chicken pieces marinated in aromatic spices, cooked in clay-oven (tandoor). Served with Coriander and Mint Chutney",
-    price: "£7.40"
   },
   {
     id: 34,
