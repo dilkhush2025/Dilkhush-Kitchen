@@ -37,8 +37,7 @@ function ContactInfo() {
       <h3 className="text-capitalize mb-3">Opening hours</h3>
       <ul className="list-unstyled fs-6 fw-semibold">
         <li>Pre Order Starts: 10:00</li>
-        <li>Tue - Fri: 16:00 - 22:00</li>
-        <li>Sat - Sun: 12:00 - 22:00</li>
+        <li>Tue - Sun: 18:00 - 22:00</li>
         <li>Mon: Closed</li>
       </ul>
     </motion.section>
