@@ -2,28 +2,28 @@ import ImageGallery from '../../components/ImageGallery/ImageGallery';
 import Header from '../../components/Header/Header';
 import AboutUsSection from '../../components/AboutUsSection/AboutUsSection';
 import ContactSection from '../../components/ContactSection/ContactSection';
-// import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';  // make sure to import the CSS
 
 function Home() {
 
   // 🔹 ADD: popup state
-  // const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   // 🔹 ADD: show popup on page load
-  // useEffect(() => {
-  //   setShowPopup(false);
-  // }, []);
+  useEffect(() => {
+    setShowPopup(true);
+  }, []);
 
   return (
     <div className='home-page'>
-      {/* 🔹 ADD: Popup Image
+      🔹 ADD: Popup Image
         {showPopup && (
           <div className="popup-overlay">
             <div className="popup-content">
               <button
                 className="popup-close"
-                onClick={() => setShowPopup(false)}
+                onClick={() => setShowPopup(true)}
               >
                 &times;
               </button>
@@ -34,7 +34,7 @@ function Home() {
               />
             </div>
           </div>
-        )}  */}
+        )}  
 
         {/* ✅ EXISTING CODE (unchanged) */}
 
